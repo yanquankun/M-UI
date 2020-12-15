@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MuiAlertModule } from 'm-ui-lib/mui-alert';
+import { MuiAlertModule } from 'm-ui-lib/alert';
+import { TagModule } from 'm-ui-lib/tag';
 @NgModule({
   declarations: [
     AppComponent
@@ -11,7 +12,8 @@ import { MuiAlertModule } from 'm-ui-lib/mui-alert';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MuiAlertModule
+    MuiAlertModule,
+    TagModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

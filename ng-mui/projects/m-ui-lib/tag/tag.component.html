@@ -1,0 +1,7 @@
+<span class="mui-tag" #tag (click)="tagClick($event)"
+  [ngStyle]="{'background':tagBgc?tagBgc:'','border':tagBgc?'none':''}" *ngIf=" !hideTag">
+  <span class="mui-tag-content" #content>
+    <ng-content selector=" mui-tag"></ng-content>
+  </span>
+  <i class="mui-tag-close" (click)="close()" *ngIf="closeable">&#xe6ac;</i>
+</span>
