@@ -79,7 +79,7 @@ export class TagComponent implements OnInit {
 
   close() {
     this.hideTag = true;
-    const val = this.content.nativeElement.textContent;
+    const val = this.content.nativeElement.outerText;
     const output = {
       val: val,
     }
