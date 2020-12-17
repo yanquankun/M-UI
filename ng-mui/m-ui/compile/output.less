@@ -1,0 +1,27 @@
+/*
+    如果你要采用烟花效果，则在你的项目中引入下列的css
+*/
+.particle {
+  --x: 0;
+  --y: 0;
+  background-color: rebeccapurple;
+  border-radius: 50%;
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  z-index: 999;
+}
+.particle.move {
+  animation: move 1000ms linear forwards;
+}
+@keyframes move {
+  to {
+    transform: translate(var(--x), var(--y));
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

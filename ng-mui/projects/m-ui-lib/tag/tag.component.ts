@@ -1,9 +1,8 @@
 import { Component, Input, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
-import { Event } from '@angular/router';
 @Component({
   selector: 'm-ui-tag',
   templateUrl: './tag.component.html',
-  styleUrls: ['./tag.component.less', './celebrate.less']
+  styleUrls: ['./tag.component.less']
 })
 export class TagComponent implements OnInit {
   // 是否启动自定义颜色

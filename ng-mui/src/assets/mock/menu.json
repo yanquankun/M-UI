@@ -1,0 +1,40 @@
+[
+    {
+        "name": "菜单一",
+        "key": "1",
+        "pid": null,
+        "children": [
+            {
+                "name": "二级菜单一",
+                "key": "0-1",
+                "pid": "1",
+                "children": []
+            },
+            {
+                "name": "二级菜单二",
+                "key": "0-2",
+                "pid": "1",
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "菜单二",
+        "key": "2",
+        "pid": null,
+        "children": [
+            {
+                "name": "二级菜单三",
+                "key": "2-1",
+                "pid": "2",
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "菜单三",
+        "key": "3",
+        "pid": null,
+        "children": []
+    }
+]

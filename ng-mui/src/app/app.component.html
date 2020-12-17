@@ -1,19 +1,33 @@
-<div>
-    <div>alert:</div>
-    <m-ui-alert alertTitle="我是标题" [closeable]="true" type="danger" [closeDelayTime]="false">我是一个danger的alert
-    </m-ui-alert>&nbsp;
-    <m-ui-alert [type]="'success'" [closeDelayTime]="false">我是一个success的alert</m-ui-alert>&nbsp;
-    <m-ui-alert [type]="'info'" [closeDelayTime]="false">我是一个info的alert</m-ui-alert>&nbsp;
-    <m-ui-alert [type]="'warning'" [closeDelayTime]="false">我是一个warning的alert</m-ui-alert>&nbsp;
-    <m-ui-alert [showIcon]="false" [type]="'warning'" [closeDelayTime]="false">我是一个没有icon的warning的alert</m-ui-alert>
+<app-header></app-header>
+<app-silder></app-silder>
+<div class="content">
+    <div>
+        <div>alert:</div>
+        <m-ui-alert alertTitle="我是标题" [closeable]="true" type="danger" [closeDelayTime]="false">我是一个danger的alert
+        </m-ui-alert>&nbsp;
+        <m-ui-alert [type]="'success'" [closeDelayTime]="false">我是一个success的alert</m-ui-alert>&nbsp;
+        <m-ui-alert [type]="'info'" [closeDelayTime]="false">我是一个info的alert</m-ui-alert>&nbsp;
+        <m-ui-alert [type]="'warning'" [closeDelayTime]="false">我是一个warning的alert</m-ui-alert>&nbsp;
+        <m-ui-alert [showIcon]="false" [type]="'warning'" [closeDelayTime]="false">我是一个没有icon的warning的alert</m-ui-alert>
+    </div>
+    <br>
+    <div>
+        <div>tag:</div>
+        <m-ui-tag>basic</m-ui-tag>&nbsp;
+        <m-ui-tag tagBgc="yellow">自定义颜色</m-ui-tag>&nbsp;
+        <m-ui-tag tagBgc="#ccc"><span style="color: #000;">内容模板</span></m-ui-tag>&nbsp;
+        <m-ui-tag [celebrate]="true">点击绽放烟花</m-ui-tag>&nbsp;
+        <m-ui-tag [closeable]="true" (closeEvent)="closeEvent($event)">可关闭！</m-ui-tag>
+    </div>
+    <div>
+        <div>meun:</div>
+        <m-ui-menu [menuData]="menuData"></m-ui-menu>
+    </div>
+    <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
+        &lt;button pButton type="button" label="Click" (click)="handleClick($event)"&gt;&lt;/button&gt;
+        &lt;p-button label="Click" (onClick)="handleClick($event)"&gt;&lt;/p-button&gt;
+    </app-code>
 </div>
-<br>
-<div>
-    <div>tag:</div>
-    <m-ui-tag>basic</m-ui-tag>&nbsp;
-    <m-ui-tag tagBgc="yellow">自定义颜色</m-ui-tag>&nbsp;
-    <m-ui-tag tagBgc="#ccc"><span style="color: #000;">内容模板</span></m-ui-tag>&nbsp;
-    <m-ui-tag [celebrate]="true">点击绽放烟花</m-ui-tag>&nbsp;
-    <m-ui-tag [closeable]="true" (closeEvent)="closeEvent($event)">可关闭！</m-ui-tag>
-</div>
-<router-outlet></router-outlet>
+<!-- <div class="outlet">
+    <router-outlet></router-outlet>
+</div> -->

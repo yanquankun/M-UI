@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/m-ui-lib-tag.umd.js",
+  "module": "../fesm5/m-ui-lib-tag.js",
+  "es2015": "../fesm2015/m-ui-lib-tag.js",
+  "esm5": "../esm5/tag/m-ui-lib-tag.js",
+  "esm2015": "../esm2015/tag/m-ui-lib-tag.js",
+  "fesm5": "../fesm5/m-ui-lib-tag.js",
+  "fesm2015": "../fesm2015/m-ui-lib-tag.js",
+  "typings": "m-ui-lib-tag.d.ts",
+  "metadata": "m-ui-lib-tag.metadata.json",
+  "sideEffects": false,
+  "name": "m-ui-lib/tag"
+}
