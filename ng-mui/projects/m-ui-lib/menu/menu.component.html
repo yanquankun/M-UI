@@ -1,3 +1,27 @@
-<div class="mui-menu">
-  123
+<div class="mui-menu" [ngStyle]="{'background':theme=='dark'?'#001529':'#fff'}"
+  *ngIf="_menuData&&_menuData.length else loading">
+  <ng-container *ngTemplateOutlet="nav; context:{ $implicit: _menuData} "></ng-container>
 </div>
+<ng-template #nav let-menu>
+  <ul>
+    <ng-container *ngFor="let item of menu">
+      <ng-container>
+        <li class="mui-menu-content">
+          <span class="mui-menu-content-item" *ngIf="!item.visible" (click)="item.open=!item.open">
+            {{item.name}}
+            <span *ngIf="item.children&&item.children.length&&item.open">
+              <i class="iconfont mui-menu-content-item-up">&#xe6db;</i>
+            </span>
+            <span *ngIf="item.children&&item.children.length&&!item.open">
+              <i class="iconfont mui-menu-content-item-down">&#xe6da;</i>
+            </span>
+          </span>
+          <ng-container *ngTemplateOutlet="nav; context: { $implicit: item?.children } "></ng-container>
+        </li>
+      </ng-container>
+    </ng-container>
+  </ul>
+</ng-template>
+<ng-template #loading>
+  <div>Loading...</div>
+</ng-template>
