@@ -1,18 +1,18 @@
-<div class="mui-menu" [ngStyle]="{'background':theme=='dark'?'#001529':'#fff'}"
-  *ngIf="_menuData&&_menuData.length else loading">
+<div class="mui-menu" *ngIf="_menuData&&_menuData.length else loading">
   <ng-container *ngTemplateOutlet="nav; context:{ $implicit: _menuData} "></ng-container>
 </div>
 <ng-template #nav let-menu>
   <ul>
     <ng-container *ngFor="let item of menu">
       <ng-container>
-        <li class="mui-menu-content">
-          <span class="mui-menu-content-item" *ngIf="!item.visible" (click)="item.open=!item.open">
+        <li class="mui-menu-content" id="{{item.key}}"
+          [ngStyle]="{'background':theme=='dark'?'#001529':'#fff','color':theme=='dark'?'rgba(255,255,255,.65)':'','width':(220-(item?.level-1)*20)+'px','padding-left':item?.level==1?'10px':'20px'}">
+          <span class="mui-menu-content-item" (click)="toggle(item)">
             {{item.name}}
-            <span *ngIf="item.children&&item.children.length&&item.open">
+            <span *ngIf="item.children&&item.children.length&&item.visible">
               <i class="iconfont mui-menu-content-item-up">&#xe6db;</i>
             </span>
-            <span *ngIf="item.children&&item.children.length&&!item.open">
+            <span *ngIf="item.children&&item.children.length&&!item.visible">
               <i class="iconfont mui-menu-content-item-down">&#xe6da;</i>
             </span>
           </span>

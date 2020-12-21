@@ -23,4 +23,18 @@ export class until {
             .pipe(debounce(() => scroll()))
             .debounceTime(500);
     }
+    // 深拷贝
+    deepClone(obj) {
+        let objClone = Array.isArray(obj) ? [] : {};
+        if (obj && typeof obj === 'object') {
+            for (let key in obj) {
+                if (obj[key] && typeof obj[key] === 'object') {
+                    objClone[key] = this.deepClone(obj[key]);
+                } else {
+                    objClone[key] = obj[key]
+                }
+            }
+        }
+        return objClone;
+    }
 }

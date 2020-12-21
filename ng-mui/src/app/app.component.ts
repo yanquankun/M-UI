@@ -17,6 +17,10 @@ export class AppComponent implements OnInit {
     console.log(e)
   }
 
+  clickActiveNode(e) {
+    console.log(e)
+  }
+
   ngOnInit() {
     this.http.request("get", "./assets/mock/menu.json").subscribe(res => {
       this.menuData = [].concat(res);

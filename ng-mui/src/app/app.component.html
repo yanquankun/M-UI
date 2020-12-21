@@ -21,7 +21,9 @@
     </div>
     <div>
         <div>menu:</div>
-        <m-ui-menu [menuData]="menuData"></m-ui-menu>
+        <m-ui-menu [theme]="'dark'" (clickActiveNode)="clickActiveNode($event)" [menuData]="menuData"></m-ui-menu>
+        <br>
+        <m-ui-menu [theme]="'light'" [menuData]="menuData"></m-ui-menu>
     </div>
     <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
         &lt;button pButton type="button" label="Click" (click)="handleClick($event)"&gt;&lt;/button&gt;
