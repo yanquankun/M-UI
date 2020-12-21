@@ -28,6 +28,7 @@ export class MenuComponent implements OnInit {
   constructor() { }
 
   assemble(val) {
+    console.log(val)
     this._menuData = this.recursive(val);
   }
 

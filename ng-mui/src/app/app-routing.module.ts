@@ -3,6 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { StartComponent } from './introduce/start/start.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { TagComponent } from './components/tag/tag.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { TimePickerComponent } from './components/time-picker/time-picker.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -17,6 +20,12 @@ const routes: Routes = [
   }, {
     path: "tag",
     component: TagComponent
+  }, {
+    path: "menu",
+    component: MenuComponent
+  }, {
+    path: "timepicker",
+    component: TimePickerComponent
   }, {
     path: '**',
     canActivate: [StartComponent],

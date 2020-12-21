@@ -1,3 +1,35 @@
-<p>
-  alert works!
-</p>
+<div>
+  <span class="common-sp">
+    <m-ui-alert alertTitle="我是标题" [closeable]="true" type="danger" [closeDelayTime]="false">我是一个danger的alert
+    </m-ui-alert>
+  </span>
+  <span class="common-sp">
+    <m-ui-alert [type]="'success'" [closeDelayTime]="false">我是一个success的alert</m-ui-alert>
+  </span>
+  <span class="common-sp">
+    <m-ui-alert [type]="'info'" [closeDelayTime]="false">我是一个info的alert</m-ui-alert>
+  </span>
+  <span class="common-sp">
+    <m-ui-alert [type]="'warning'" [closeDelayTime]="false">我是一个warning的alert</m-ui-alert>
+  </span>
+  <span class="common-sp">
+    <m-ui-alert [showIcon]="false" [type]="'warning'" [closeDelayTime]="false">我是一个没有icon的warning的alert</m-ui-alert>
+  </span>
+</div>
+<label for="alert">import:</label>
+<app-code lang="language-typescript" ngNonBindable ngPreserveWhitespaces>
+  import &#123;TagModule&#125; from 'm-ui-lib/alert';
+</app-code>
+<label for="tag">source:</label>
+<app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
+  &lt;div&gt;
+  &lt;div&gt;alert:&lt;/div&gt;
+  &lt;m-ui-alert alertTitle="我是标题" [closeable]="true" type="danger" [closeDelayTime]="false"&gt;我是一个danger的alert
+  &lt;/m-ui-alert&gt;&nbsp;
+  &lt;m-ui-alert [type]="'success'" [closeDelayTime]="false"&gt;我是一个success的alert&lt;/m-ui-alert&gt;&nbsp;
+  &lt;m-ui-alert [type]="'info'" [closeDelayTime]="false"&gt;我是一个info的alert&lt;/m-ui-alert&gt;&nbsp;
+  &lt;m-ui-alert [type]="'warning'" [closeDelayTime]="false"&gt;我是一个warning的alert&lt;/m-ui-alert&gt;&nbsp;
+  &lt;m-ui-alert [showIcon]="false" [type]="'warning'"
+  [closeDelayTime]="false"&gt;我是一个没有icon的warning的alert&lt;/m-ui-alert&gt;
+  &lt;/div&gt;
+</app-code>

@@ -1,0 +1,19 @@
+<div>
+  <div class="common-div">
+    <label for="dark">暗黑主题：</label>
+    <m-ui-menu [theme]="'dark'" [menuData]="menuData" (clickActiveNode)="clickActiveNode($event)"></m-ui-menu>
+  </div>
+  <div class="common-div">
+    <label for="dark">亮色主题：</label>
+    <m-ui-menu [theme]="'light'" [menuData]="menuData2"></m-ui-menu>
+  </div>
+</div>
+<label for="menu">import:</label>
+<app-code lang="language-typescript" ngNonBindable ngPreserveWhitespaces>
+  import &#123;TagModule&#125; from 'm-ui-lib/menu';
+</app-code>
+<label for="menu">source:</label>
+<app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
+  &lt;m-ui-menu [theme]="'dark'" [menuData]="menuData" (clickActiveNode)="clickActiveNode($event)"&gt;&lt;/m-ui-menu&gt;
+  &lt;m-ui-menu [theme]="'light'" [menuData]="menuData2"&gt;&lt;/m-ui-menu&gt;
+</app-code>

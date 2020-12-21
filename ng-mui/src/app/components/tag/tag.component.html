@@ -1,3 +1,19 @@
-<p>
-  tag works!
-</p>
+<div>
+  <m-ui-tag>basic</m-ui-tag>&nbsp;
+  <m-ui-tag tagBgc="yellow">自定义颜色</m-ui-tag>&nbsp;
+  <m-ui-tag tagBgc="#ccc"><span style="color: #000;">内容模板</span></m-ui-tag>&nbsp;
+  <m-ui-tag [celebrate]="true">点击绽放烟花</m-ui-tag>&nbsp;
+  <m-ui-tag [closeable]="true" (closeEvent)="closeEvent($event)">可关闭！</m-ui-tag>
+</div>
+<label for="tag">import:</label>
+<app-code lang="language-typescript" ngNonBindable ngPreserveWhitespaces>
+  import &#123;TagModule&#125; from 'm-ui-lib/tag';
+</app-code>
+<label for="tag">source:</label>
+<app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
+  &lt;m-ui-tag&gt;basic&lt;/m-ui-tag&gt;&nbsp;
+  &lt;m-ui-tag tagBgc="yellow"&gt;自定义颜色&lt;/m-ui-tag&gt;&nbsp;
+  &lt;m-ui-tag tagBgc="#ccc"&gt;&lt;span style="color: #000;"&gt;内容模板&lt;/span&gt;&lt;/m-ui-tag&gt;&nbsp;
+  &lt;m-ui-tag [celebrate]="true"&gt;点击绽放烟花&lt;/m-ui-tag&gt;&nbsp;
+  &lt;m-ui-tag [closeable]="true" (closeEvent)="closeEvent($event)"&gt;可关闭！&lt;/m-ui-tag&gt;
+</app-code>
