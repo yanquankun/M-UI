@@ -9,6 +9,18 @@ export class StartComponent implements OnInit {
 
   constructor() { }
 
+  introduce() {
+    window.open('http://39.97.119.181/myself/index.html');
+  }
+
+  three() {
+    window.open('http://39.97.119.181/3DResume/resume.html');
+  }
+
+  github() {
+    window.open('https://github.com/yanquankun');
+  }
+
   ngOnInit() {
   }
 

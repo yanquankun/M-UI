@@ -38,6 +38,7 @@ export class MenuComponent implements OnInit {
       const childDom = document.getElementById(item.key);
       childDom.classList.add('active');
       this.lastActiveDom = childDom;
+      item.origin.treeMaxDeep = this._deep;
       this.clickActiveNode.emit(item.origin);
     } else {
       const childDom = document.getElementById(item.key).getElementsByTagName("ul")[0];
@@ -53,6 +54,7 @@ export class MenuComponent implements OnInit {
   recursive(menus, _level = 1) {
     menus && menus.length && menus.map((menu, idx) => {
       menu.level = _level;
+      if (this._deep < menu.level) this._deep = menu.level;
       !("visible" in menu) && (menu.visible = true);
       Object.defineProperty(menu, 'origin', {
         writable: false,

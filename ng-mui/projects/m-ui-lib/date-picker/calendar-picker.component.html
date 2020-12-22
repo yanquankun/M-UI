@@ -1,3 +1,16 @@
-<p>
-  calendar-picker works!
-</p>
+<div class="calendar">
+  <div class="calendar-header">
+    <div class="calendar-header-time"></div>
+    <div class="calendar-header-week">
+      <span class="calendar-header-week-sp col7" *ngFor="let weekshow of _weekShow;let k = index"
+        [ngStyle]="{'color':k==5||k==6?'#e02d2d':''}">
+        {{weekshow[weekShowType]}}
+      </span>
+    </div>
+  </div>
+  <div class="calendar-body">
+    <span [ngClass]="{'calendar-active':day.isNow}" class="calendar-body-day" *ngFor="let day of curMonthData">
+      <span [ngStyle]="{'color':day.type!='cur'?'#bfbfbf':''}" class="calendar-body-day-show">{{day?.name}}</span>
+    </span>
+  </div>
+</div>

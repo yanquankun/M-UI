@@ -287,4 +287,33 @@ export class dateFormat extends until {
             return false;
         }
     }
+    // 获取本月第一天是星期几
+    getFirstDayWeekShow(): number | string {
+        const now = new Date();
+        const t = `${now.getMonth() + 1}/1/${now.getFullYear()}`;
+        return new Date(t).getDay();
+    }
+    // 获取日历第一周偏移量
+    getCalendarFirstWeekOffset(): number {
+        return !this.getFirstDayWeekShow() ? 6 : Number(this.getFirstDayWeekShow()) - 1;
+    }
+    // 获取本月天数 type pre上个月 cur本月 next下个月
+    getMonthDays(type = 'cur'): number {
+        const now = new Date();
+        const [preyear, nextyear, premonth, nextmonth] = [now.getMonth() ? now.getFullYear() : now.getFullYear() - 1,
+        now.getMonth() == 11 ? now.getFullYear() + 1 : now.getFullYear(),
+        now.getMonth() ? now.getMonth() : 12,
+        now.getMonth() == 11 ? 1 : now.getMonth() + 1];
+        return new Date(type == 'cur' ? now.getFullYear() : type == 'pre' ? preyear : nextyear, type == 'cur' ? now.getMonth() + 1 : type == 'pre' ? premonth : nextmonth, 0).getDate();
+    }
+    // 获取当月日历正反偏移量
+    getCurMonthOffset() {
+        return {
+            "monthFirstWeekDay": this.getFirstDayWeekShow(),
+            "firstWeekOffset": this.getCalendarFirstWeekOffset(),
+            "monthDays": this.getMonthDays(),
+            "lastMonthDays": this.getMonthDays('pre'),
+            "nextMonthDays": this.getMonthDays('next'),
+        }
+    }
 }
