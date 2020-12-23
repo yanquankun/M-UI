@@ -1,3 +1,14 @@
+enum infoStatu {
+    'READ',
+    'NEW',
+    'DELETE',
+    'DISABLED',
+}
+enum eventTypeEnum {
+    CLICK = 'click',
+    MOUSEENTER = 'mouseenter',
+    MOUSELEAVE = 'mouseleave',
+}
 export const _weekShow: Array<{ id: string | number, Name: string, FullName: string, EnName: string, FullEnName: string }> = [{
     id: 1,
     Name: "一",
@@ -41,20 +52,8 @@ export const _weekShow: Array<{ id: string | number, Name: string, FullName: str
     EnName: "Sun",
     FullEnName: "Sunday"
 }]
-enum eventType {
-    'CLICK',
-    'MOUSEENTER',
-    'MOUSELEAVE',
-}
-enum infoStatu {
-    'READ',
-    'NEW',
-    'DELETE',
-    'DISABLED',
-}
 export interface caledarEvent {
     id: string,
-    eventType?: eventType,
     info?: string,
     statu?: infoStatu,
 }

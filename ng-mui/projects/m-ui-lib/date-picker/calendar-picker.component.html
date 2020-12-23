@@ -1,6 +1,30 @@
 <div class="calendar">
   <div class="calendar-header">
-    <div class="calendar-header-time"></div>
+    <div class="calendar-header-time">
+      <div class="calendar-header-time-year" (click)="this.yearShow=!this.yearShow;this.monthShow=false;">
+        <span class="calendar-header-time-year-sp">
+          {{selectYear}}
+        </span>
+        <i class="arrow-down">&#xe7cc;</i>
+      </div>
+      <div *ngIf="yearShow" class="calendar-header-time-yearoption">
+        <span class="calendar-header-time-yearoption-sp" *ngFor="let year of yearOptions" (click)="yearChange(year)">
+          {{year.name}}
+        </span>
+      </div>
+      <div class="calendar-header-time-month" (click)="this.monthShow=!this.monthShow;this.yearShow=false;">
+        <span>
+          <span class="calendar-header-time-month-arrow" (click)="arrowChange('left',$event)">&lt;</span>
+          {{selectMonth}}
+          <span class="calendar-header-time-month-arrow" (click)="arrowChange('right',$event)">&gt;</span>
+        </span>
+      </div>
+      <div *ngIf="monthShow" class="calendar-header-time-monthoption">
+        <span class="calendar-header-time-monthoption-sp" *ngFor="let month of monthOptions"
+          (click)="monthChange(month)">{{month.name}}</span>
+      </div>
+      <span class="calendar-header-time-now" (click)="goNow()">返回今天</span>
+    </div>
     <div class="calendar-header-week">
       <span class="calendar-header-week-sp col7" *ngFor="let weekshow of _weekShow;let k = index"
         [ngStyle]="{'color':k==5||k==6?'#e02d2d':''}">
@@ -9,8 +33,14 @@
     </div>
   </div>
   <div class="calendar-body">
-    <span [ngClass]="{'calendar-active':day.isNow}" class="calendar-body-day" *ngFor="let day of curMonthData">
+    <span [ngClass]="{'calendar-active':day.isNow}" class="calendar-body-day" *ngFor="let day of curMonthData"
+      (click)="dateSelect(day)">
       <span [ngStyle]="{'color':day.type!='cur'?'#bfbfbf':''}" class="calendar-body-day-show">{{day?.name}}</span>
     </span>
   </div>
+</div>
+<div class="calendar-info" #info>
+  <textarea name="calendarInfo" class="calendar-info-textarea" placeholder="请输入" id="calendarInfo" cols="20"
+    rows="8">{{calendarInfo}}</textarea>
+  <span class="calendar-info-close">保存</span>
 </div>

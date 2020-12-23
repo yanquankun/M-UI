@@ -29,7 +29,8 @@
             "styles": [
               "src/styles.less",
               "src/assets/less/celebrate.less",
-              "src/assets/less/prism.css"
+              "src/assets/less/prism.css",
+              "src/assets/less/prism.js"
             ],
             "scripts": [],
             "es5BrowserSupport": true
