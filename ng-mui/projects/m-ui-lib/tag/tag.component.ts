@@ -16,7 +16,6 @@ export class TagComponent implements OnInit {
   @ViewChild("content") content: ElementRef<any>;
   @ViewChild("tag") tag: ElementRef<any>;
   hideTag: boolean = false;
-  beforeBgc = "#fafafa";
 
   constructor() { }
 

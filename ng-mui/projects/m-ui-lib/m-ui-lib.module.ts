@@ -5,6 +5,7 @@ import { MuiAlertModule } from 'm-ui-lib/alert';
 import { TagModule } from 'm-ui-lib/tag';
 import { MenuModule } from 'm-ui-lib/menu';
 import { DatePickerModule } from 'm-ui-lib/date-picker';
+import { DragZoomDirective } from './util/drag-zoom.directive';
 export * from 'm-ui-lib/alert';
 export * from 'm-ui-lib/tag';
 export * from 'm-ui-lib/menu';
@@ -17,7 +18,7 @@ export * from 'm-ui-lib/date-picker';
   ],
   exports: [MuiAlertModule, TagModule, MenuModule, DatePickerModule],
   providers: [],
-  declarations: []
+  declarations: [DragZoomDirective]
 })
 export class MUiLibModule {
   static forRoot(): ModuleWithProviders<MUiLibModule> {

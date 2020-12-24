@@ -23,6 +23,7 @@
         <span class="calendar-header-time-monthoption-sp" *ngFor="let month of monthOptions"
           (click)="monthChange(month)">{{month.name}}</span>
       </div>
+      <span class="calendar-header-time-show">{{curdate}}</span>
       <span class="calendar-header-time-now" (click)="goNow()">返回今天</span>
     </div>
     <div class="calendar-header-week">
@@ -33,14 +34,16 @@
     </div>
   </div>
   <div class="calendar-body">
-    <span [ngClass]="{'calendar-active':day.isNow}" class="calendar-body-day" *ngFor="let day of curMonthData"
-      (click)="dateSelect(day)">
+    <span [ngClass]="{'calendar-active':day.isNow,'calendar-select-active':day.id==avtiveDay}" class="calendar-body-day"
+      *ngFor="let day of curMonthData" (click)="dateSelect(day)">
       <span [ngStyle]="{'color':day.type!='cur'?'#bfbfbf':''}" class="calendar-body-day-show">{{day?.name}}</span>
+      <span *ngIf="day.statu" [ngStyle]="{'background':day.statu=='NEW'?'red':day.statu=='READ'?'#1890ff':''}"
+        class="calendar-body-day-statu"></span>
     </span>
   </div>
 </div>
 <div class="calendar-info" #info>
-  <textarea name="calendarInfo" class="calendar-info-textarea" placeholder="请输入" id="calendarInfo" cols="20"
-    rows="8">{{calendarInfo}}</textarea>
-  <span class="calendar-info-close">保存</span>
+  <textarea name="calendarInfo" class="calendar-info-textarea" placeholder="请输入" id="calendarInfo" cols="20" rows="8"
+    [(ngModel)]="calendarInfo"></textarea>
+  <span class="calendar-info-close" (click)="save()">保存</span>
 </div>

@@ -5,6 +5,7 @@ import { AlertComponent } from './components/alert/alert.component';
 import { TagComponent } from './components/tag/tag.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { TimePickerComponent } from './components/time-picker/time-picker.component';
+import { DragZoomComponent } from './components/drag-zoom/drag-zoom.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,9 @@ const routes: Routes = [
   }, {
     path: "timepicker",
     component: TimePickerComponent
+  }, {
+    path: "drag-zoom",
+    component: DragZoomComponent
   }, {
     path: '**',
     canActivate: [StartComponent],

@@ -92,6 +92,8 @@ export class dateFormat extends until {
         } else if (type == "MonthDay") {
             return super.add0(m) + "月" + super.add0(d) + "日";
         } else if (type == "YearMonthDay") {
+            return y + "年" + super.add0(m) + "月" + super.add0(d) + "日";
+        } else if (type == "YearMonthDay") {
             return y + "-" + super.add0(m) + "-" + super.add0(d);
         } else if (type == "monthDayTime") {
             return super.add0(m) + "-" + super.add0(d) + " " + super.add0(h) + ":" + super.add0(mm);

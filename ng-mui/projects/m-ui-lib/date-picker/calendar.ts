@@ -1,8 +1,8 @@
-enum infoStatu {
-    'READ',
-    'NEW',
-    'DELETE',
-    'DISABLED',
+export enum infoStatu {
+    READ = 'READ',
+    NEW = 'NEW',
+    DELETE = 'DELETE',
+    DISABLED = 'DISABLED',
 }
 enum eventTypeEnum {
     CLICK = 'click',

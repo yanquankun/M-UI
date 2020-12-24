@@ -44,7 +44,7 @@ export class SilderComponent implements OnInit {
             "key": "_tag",
             "url": "/tag",
             "pid": "_exhibition",
-          },{
+          }, {
             "name": "time-picker 时间选择",
             "key": "_timepicker",
             "url": "/timepicker",
@@ -63,7 +63,19 @@ export class SilderComponent implements OnInit {
             "pid": "_prompt",
           },
         ]
-      }
+      }, {
+        "name": "指令",
+        "key": "_directive",
+        "pid": null,
+        "children": [
+          {
+            "name": "dragZoom 拖拽缩放",
+            "key": "_dragZoom",
+            "url": "/drag-zoom",
+            "pid": "_directive",
+          },
+        ]
+      },
     ]
   }
 

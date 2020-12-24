@@ -1,13 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+## Api 组件ApiData传入值格式
 
-@Component({
-  selector: 'app-tag',
-  templateUrl: './tag.component.html',
-  styleUrls: ['./tag.component.less']
-})
-export class TagComponent implements OnInit {
-  ApiData: Array<Object> = [{
-    title: "[tag 标签]",
+[{
+
+    title:string,
+    api:[{
+        name:string,
+        describe: "string",
+        type: "string",
+        default: "string"
+    }]
+
+}]
+Example：[{
+
+    title: "tag 标签",
     api: [{
       name: "tagBgc",
       describe: "是否启动自定义颜色",
@@ -24,21 +30,15 @@ export class TagComponent implements OnInit {
       type: "boolean",
       default: "false"
     }, {
+      name: "celebrate",
+      describe: "是否打开点击tag标签开启庆祝效果,需单独引入celebrate.less文件",
+      type: "boolean",
+      default: "false"
+    }, {
       name: "closeEvent",
       describe: "关闭事件",
       type: "EventEmitter<{ val: string }>",
       default: ""
     }]
-  },];
 
-  constructor() { }
-
-  closeEvent(e) {
-    console.log(e)
-  }
-
-
-  ngOnInit() {
-  }
-
-}
+  }]; 

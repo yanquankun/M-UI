@@ -13,10 +13,6 @@ export class AppComponent implements OnInit {
 
   }
 
-  closeEvent(e) {
-    console.log(e)
-  }
-
   ngOnInit() {
     this.http.request("get", "./assets/mock/menu.json").subscribe(res => {
       this.menuData = [].concat(res);

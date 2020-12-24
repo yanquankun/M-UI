@@ -10,6 +10,25 @@ import { Router } from '@angular/router';
 export class MenuComponent implements OnInit {
   menuData: any = [];
   menuData2: any = [];
+  ApiData: Array<Object> = [{
+    title: "[menu 菜单]",
+    api: [{
+      name: "theme",
+      describe: "菜单风格",
+      type: "'light' | 'dark'",
+      default: "light"
+    }, {
+      name: "menuData",
+      describe: "菜单元数据",
+      type: "Array",
+      default: "-"
+    }, {
+      name: "clickActiveNode",
+      describe: "点击叶子节点事件",
+      type: "EventEmitter<Object>",
+      default: ""
+    }]
+  },];
 
   constructor(private http: HttpClient, private router: Router) { }
 

@@ -1,5 +1,6 @@
 @import './../styles/core/_common.less';
 @import './../styles/core/_layout.less';
+@import './../styles/core/_color.less';
 
 #common_year_month {
   width: 80px;
@@ -100,6 +101,18 @@
         top: 50%;
         transform: translateY(-50%);
       }
+
+      &-show {
+        font-size: 20px;
+        font-weight: 900;
+        margin-left: 50px;
+        position: absolute;
+        right: 170px;
+        height: 24px;
+        top: 40%;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
     }
 
     &-week {
@@ -131,11 +144,23 @@
       height: calc((100% / 6) - 6px);
       padding: 3px;
       float: left;
+      position: relative;
 
       &-show {
         margin-top: 6px;
         display: block;
         text-align: center;
+      }
+
+      &-statu {
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 6px;
+        background: red;
+        position: absolute;
+        right: 37px;
+        bottom: 3px;
       }
     }
 
@@ -160,6 +185,10 @@
   border: 3px solid #fb0;
 }
 
+.calendar-select-active {
+  background-color: #fb0;
+  opacity: .8;
+}
 
 .calendar-info {
   z-index: 999;
@@ -185,5 +214,9 @@
     cursor: pointer;
     position: absolute;
     right: 20px;
+  }
+
+  &-close:hover {
+    color: @mui-primary-color;
   }
 }

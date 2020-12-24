@@ -1,0 +1,24 @@
+<div class="api">
+  <h2>API</h2>
+  <div *ngFor="let api of ApiData" class="api-content">
+    <div class="api-content-title">{{api.title}}</div>
+    <table class="api-content-table">
+      <thead>
+        <tr>
+          <th>参数</th>
+          <th>说明</th>
+          <th>类型</th>
+          <th>默认值</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tr of api.api">
+          <td>{{tr?.name}}</td>
+          <td>{{tr?.describe}}</td>
+          <td>{{tr?.type}}</td>
+          <td>{{tr?.default}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

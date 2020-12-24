@@ -1,5 +1,5 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { _weekShow, caledarEvent } from './calendar';
+import { Component, ElementRef, Input, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
+import { _weekShow, caledarEvent, infoStatu } from './calendar';
 import { dateFormat } from 'm-ui-lib/util/date';
 @Component({
   selector: 'm-ui-calendar-picker',
@@ -8,11 +8,14 @@ import { dateFormat } from 'm-ui-lib/util/date';
 })
 export class CalendarPickerComponent implements OnInit {
   // 日历事件触发方式 click 或 mouseenter
-  eventType: 'click' | 'mouseenter' = 'click';
+  @Input() eventType: 'click' | 'mouseenter' | null = null;
   // 日历选择星期一到星期日的显示方式  'Name' | 'FullName' | 'EnName' | 'FullEnName'
   @Input() weekShowType: 'Name' | 'FullName' | 'EnName' | 'FullEnName' = "Name";
   // 日历记录事件对象 数据类型为 caledarEvent
   @Input() calendarEventArr: Array<caledarEvent> = null;
+  // 日历信息保存事件
+  @Output() calendarInfoEmit: EventEmitter<Object> = new EventEmitter<Object>();
+
   private _weekShow: Array<{ id: string | number, Name: string, FullName: string, EnName: string, FullEnName: string }> = _weekShow;
   private dateFormat = new dateFormat;
   // 日历每月第一天周几
@@ -37,6 +40,9 @@ export class CalendarPickerComponent implements OnInit {
   { id: 12, name: '12月' }];
   curDateId: string = "";// 查询的基id  year-month-day
   calendarInfo: string = ""//提示信息
+  selectDay: caledarEvent;// 当前选中的日期信息记录
+  avtiveDay = null;// 当前需要高亮的日期
+  curdate: string = "";// 日历表头展示的日期;
   @ViewChild("info") info: ElementRef<any>;
 
   constructor() { }
@@ -63,6 +69,7 @@ export class CalendarPickerComponent implements OnInit {
       this.selectMonth = this.curMonth + '月';
     }
     const date_arr = this.curDateId.split("-");
+    this.curdate = this.dateFormat.format(new Date(this.curYear + "-" + this.curMonth + "-" + date_arr[2]).getTime(), 'YearMonthDay', 13);
     this.initCalendar(this.curYear + "-" + this.curMonth + "-" + date_arr[2]);
   }
 
@@ -71,6 +78,7 @@ export class CalendarPickerComponent implements OnInit {
     this.selectYear = year.name;
     this.yearShow = false;
     this.curDateId = year.id + "-" + this.curDateId.split("-").slice(1).join("-");
+    this.curdate = this.dateFormat.format(new Date(this.curDateId).getTime(), 'YearMonthDay', 13);
     this.initCalendar(this.curDateId);
   }
 
@@ -80,11 +88,15 @@ export class CalendarPickerComponent implements OnInit {
     this.monthShow = false;
     const date_arr = this.curDateId.split("-");
     this.curDateId = date_arr[0] + "-" + month.id + "-" + date_arr[2];
+    this.curdate = this.dateFormat.format(new Date(this.curDateId).getTime(), 'YearMonthDay', 13);
     this.initCalendar(this.curDateId);
   }
 
   dateSelect(day) {
-    console.log(day)
+    this.selectDay = day;
+    this.calendarInfo = day.info || "";
+    this.avtiveDay = day.id;
+    this.curdate = this.dateFormat.format(new Date(day.id).getTime(), 'YearMonthDay', 13);
   }
 
   goNow() {
@@ -94,6 +106,8 @@ export class CalendarPickerComponent implements OnInit {
     this.curYear = now.getFullYear();
     this.selectYear = now.getFullYear() + "年";
     this.curDateId = this.curYear + "-" + this.curMonth + "-" + now.getDate();
+    this.curdate = this.dateFormat.format(new Date(this.curDateId).getTime(), 'YearMonthDay', 13);
+    this.avtiveDay = this.curDateId;
     this.initCalendar(this.curDateId);
   }
 
@@ -125,13 +139,23 @@ export class CalendarPickerComponent implements OnInit {
         offset++;
         type = "cur";
       }
-      this.curMonthData.push({
+      const curDayInfo = this.calendarEventArr.filter(v => v.id == id);
+      !curDayInfo.length && this.curMonthData.push({
         id: id,
         name: id.split("-")[2],
         type: type,
         isNow: isNow
       });
+      curDayInfo.length && this.curMonthData.push({
+        id: id,
+        name: id.split("-")[2],
+        type: type,
+        isNow: isNow,
+        info: curDayInfo[0].info,
+        statu: curDayInfo[0].statu
+      });
     }
+    console.log(this.calendarEventArr)
     console.log(this.curMonthData)
   }
 
@@ -144,21 +168,28 @@ export class CalendarPickerComponent implements OnInit {
       })
       start++;
     }
-    console.log(this.yearOptions)
+  }
+
+  save() {
+    this.selectDay.info = this.calendarInfo;
+    if (!this.calendarInfo && this.selectDay.statu) delete this.selectDay.statu;
+    else if (this.calendarInfo && !this.selectDay.statu) {
+      this.calendarInfoEmit.emit(this.selectDay);
+      this.selectDay.statu = infoStatu.NEW;
+    } else if (this.calendarInfo && this.selectDay.statu == infoStatu.NEW) {
+      this.selectDay.statu = infoStatu.READ;
+    }
+    console.log(this.selectDay)
   }
 
   ngOnInit() {
     const now = new Date();
-    this.curDateId = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
-    this.monthFirstWeekDay = this.dateFormat.getFirstDayWeekShow();
-    this.firstWeekOffset = this.dateFormat.getCalendarFirstWeekOffset();
-    this.monthDays = this.dateFormat.getMonthDays();
-    console.log(this.eventType)
+    this.avtiveDay = this.curDateId = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
+    this.curdate = this.dateFormat.format(now.getTime(), 'YearMonthDay', 13);
     this.initYearOptions();
     this.initCalendar(this.curDateId);
-    window.addEventListener(this.eventType, ($event) => {
+    this.eventType && window.addEventListener(this.eventType, ($event) => {
       const dom = $event.target;
-      console.log(dom)
       if (dom['classList'].contains('calendar-body-day-show') || dom['classList'].contains('calendar-body-day')) {
         if (this.info.nativeElement.style.display == "none" || !this.info.nativeElement.style.display) {
           const [x, y] = [$event.x, $event.y];
@@ -169,10 +200,16 @@ export class CalendarPickerComponent implements OnInit {
         } else {
           this.info.nativeElement.style.display = "none";
           document.body.removeChild(this.info.nativeElement);
+          if (this.calendarInfo && this.selectDay.statu == infoStatu.NEW) {
+            this.selectDay.statu = infoStatu.READ;
+          }
         }
       } else if (!dom['classList'].contains('calendar-info-textarea')) {
         this.info.nativeElement.style.display = "none";
-        document.body.removeChild(this.info.nativeElement);
+        if (this.calendarInfo && this.selectDay.statu == infoStatu.NEW) {
+          this.selectDay.statu = infoStatu.READ;
+        }
+        // document.body.removeChild(this.info.nativeElement);
       }
     }, true)
   }
