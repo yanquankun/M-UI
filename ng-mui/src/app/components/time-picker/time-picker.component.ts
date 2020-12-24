@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { caledarEvent, infoStatu } from 'm-ui-lib/date-picker/calendar';
+import { caledarEvent, infoStatu } from 'm-ui-lib/date-picker/calendar.type';
 @Component({
   selector: 'app-time-picker',
   templateUrl: './time-picker.component.html',

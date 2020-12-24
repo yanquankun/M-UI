@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
-import { _weekShow, caledarEvent, infoStatu } from './calendar';
-import { dateFormat } from 'm-ui-lib/util/date';
+import { _weekShow, caledarEvent, infoStatu } from './calendar.type';
+import { dateFormat } from 'm-ui-lib/util';
 @Component({
   selector: 'm-ui-calendar-picker',
   templateUrl: './calendar-picker.component.html',
@@ -16,8 +16,8 @@ export class CalendarPickerComponent implements OnInit {
   // 日历信息保存事件
   @Output() calendarInfoEmit: EventEmitter<Object> = new EventEmitter<Object>();
 
-  private _weekShow: Array<{ id: string | number, Name: string, FullName: string, EnName: string, FullEnName: string }> = _weekShow;
-  private dateFormat = new dateFormat;
+  _weekShow: Array<{ id: string | number, Name: string, FullName: string, EnName: string, FullEnName: string }> = _weekShow;
+  dateFormat = new dateFormat;
   // 日历每月第一天周几
   monthFirstWeekDay = null;
   // 日历每月第一周偏移量

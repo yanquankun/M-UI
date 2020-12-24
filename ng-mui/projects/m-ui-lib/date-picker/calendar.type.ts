@@ -4,11 +4,11 @@ export enum infoStatu {
     DELETE = 'DELETE',
     DISABLED = 'DISABLED',
 }
-enum eventTypeEnum {
-    CLICK = 'click',
-    MOUSEENTER = 'mouseenter',
-    MOUSELEAVE = 'mouseleave',
-}
+// enum eventTypeEnum {
+//     CLICK = 'click',
+//     MOUSEENTER = 'mouseenter',
+//     MOUSELEAVE = 'mouseleave',
+// }
 export const _weekShow: Array<{ id: string | number, Name: string, FullName: string, EnName: string, FullEnName: string }> = [{
     id: 1,
     Name: "一",

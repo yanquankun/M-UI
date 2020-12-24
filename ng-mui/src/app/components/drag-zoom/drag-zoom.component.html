@@ -1,3 +1,19 @@
 <div class="dragZoom">
   <div class="box" mUiDragZoom [highlightColor]="'#2196F3'" (domRect)="domRect($event)"></div>
 </div>
+<div style="margin: 20px 0;">
+  <span style="color: #690;">Tip:使用该指令时，需要为该元素的父元素设置相对定位属性，该元素设置绝对定位属性</span>
+</div>
+<label for="dragZoom">import:</label>
+<app-code lang="javascript" ngNonBindable ngPreserveWhitespaces>
+  import &#123;DragZoomDirective&#125; from 'm-ui-lib/util';
+</app-code>
+<label for="dragZoom">source:</label>
+<app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
+  &lt;div class="dragZoom"&gt;
+  &lt;div class="box" mUiDragZoom [highlightColor]="'#2196F3'" (domRect)="domRect($event)"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+</app-code>
+<div>
+  <app-api [ApiData]="ApiData"></app-api>
+</div>

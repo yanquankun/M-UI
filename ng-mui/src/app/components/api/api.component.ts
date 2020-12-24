@@ -10,8 +10,6 @@ export class ApiComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    console.log(this.ApiData)
-  }
+  ngOnInit() { }
 
 }

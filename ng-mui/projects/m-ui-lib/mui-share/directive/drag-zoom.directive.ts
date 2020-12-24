@@ -204,9 +204,6 @@ export class DragZoomDirective {
       y: elementRect.y
     }
     this.domRect.emit(domRect);
-    console.log(elementRect)
-    console.log(parentRect)
-    console.log(domRect)
   }
 
 }
