@@ -6,6 +6,7 @@ import { TagComponent } from './components/tag/tag.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { TimePickerComponent } from './components/time-picker/time-picker.component';
 import { DragZoomComponent } from './components/drag-zoom/drag-zoom.component';
+import { ProgressComponent } from './components/progress/progress.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,9 @@ const routes: Routes = [
   }, {
     path: "drag-zoom",
     component: DragZoomComponent
+  }, {
+    path: "progress",
+    component: ProgressComponent
   }, {
     path: '**',
     canActivate: [StartComponent],

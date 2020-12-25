@@ -1,0 +1,32 @@
+<div style="width: 400px;">
+  <label for="progress">普通进度条：</label>
+  <div class="common-div">
+    <m-ui-progress [showTail]="true">20%</m-ui-progress>
+    <m-ui-progress [progressColor]="'#532'" [progress]="16" [showTail]="true"></m-ui-progress>
+    <m-ui-progress [progressColor]="'aqua'" [progress]="100" [showTail]="true"><span style="color:green;">完成</span>
+    </m-ui-progress>
+  </div>
+  <label for="progress">彩色进度条：</label>
+  <div class="common-div">
+    <m-ui-progress [showTail]="true" [progressHeight]="20" [coloursProgress]="true" [progress]="66">66%</m-ui-progress>
+    <m-ui-progress [showTail]="true" [progressHeight]="10" [coloursProgressColor]="['#808080', '#FFFF00']"
+      [coloursProgress]="true" [progress]="16"></m-ui-progress>
+  </div>
+</div>
+<label for="progress">import:</label>
+<app-code lang="javascript" ngNonBindable ngPreserveWhitespaces>
+  import &#123;ProgressModule&#125; from 'm-ui-lib/progress';
+
+  &lt;m-ui-progress [showTail]="true"&gt;20%&lt;/m-ui-progress&gt;
+  &lt;m-ui-progress [progressColor]="'#532'" [progress]="16" [showTail]="true"&gt;&lt;/m-ui-progress&gt;
+  &lt;m-ui-progress [progressColor]="'aqua'" [progress]="100" [showTail]="true"&gt;&lt;span
+  style="color:green;"&gt;完成&lt;/span&gt;
+  &lt;/m-ui-progress&gt;
+  &lt;m-ui-progress [showTail]="true" [progressHeight]="20" [coloursProgress]="true"
+  [progress]="66"&gt;66%&lt;/m-ui-progress&gt;
+  &lt;m-ui-progress [showTail]="true" [progressHeight]="10" [coloursProgressColor]="['#808080', '#FFFF00']"
+  [coloursProgress]="true" [progress]="16"&gt;&lt;/m-ui-progress&gt;
+</app-code>
+<div>
+  <app-api [ApiData]="ApiData"></app-api>
+</div>
