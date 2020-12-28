@@ -1,0 +1,17 @@
+<div>
+  <div class="common-div">
+    <label for="select">单选下拉列表：</label>
+    <m-ui-select [data]="data" (muiModelChange)="muiModelChange($event)"></m-ui-select>
+  </div>
+  <div class="common-div">
+    <label for="select">特殊单选下拉列表：</label>
+    <m-ui-select [data]="data2" (muiModelChange)="muiModelChange($event)"></m-ui-select>
+  </div>
+</div>
+<label for="progress">import:</label>
+<app-code lang="javascript" ngNonBindable ngPreserveWhitespaces>
+  import &#123;selectModule&#125; from 'm-ui-lib/select';
+</app-code>
+<div>
+  <app-api [ApiData]="ApiData"></app-api>
+</div>

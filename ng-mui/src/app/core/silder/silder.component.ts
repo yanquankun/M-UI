@@ -54,7 +54,12 @@ export class SilderComponent implements OnInit {
             "key": "_progress",
             "url": "/progress",
             "pid": "_exhibition",
-          },
+          },{
+            "name": "select 下拉选择框",
+            "key": "_select",
+            "url": "/select",
+            "pid": "_exhibition",
+          }
         ]
       }, {
         "name": "提示",

@@ -16,7 +16,7 @@ export class DragZoomComponent implements OnInit {
     }, {
       name: "domRect",
       describe: "拖拽/缩放结束后，返回当前dom长、宽、相对位置、绝对位置",
-      type: "Object<bottom: number,height: number,left: number, right: number,top: number,width: number,x: number,y: number>",
+      type: "EventEmitter<{bottom: number,height: number,left: number, right: number,top: number,width: number,x: number,y: number}>",
       default: ""
     }]
   },];

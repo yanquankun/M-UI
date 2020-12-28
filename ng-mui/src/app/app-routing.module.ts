@@ -7,6 +7,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { TimePickerComponent } from './components/time-picker/time-picker.component';
 import { DragZoomComponent } from './components/drag-zoom/drag-zoom.component';
 import { ProgressComponent } from './components/progress/progress.component';
+import { SelectComponent } from './components/select/select.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,9 @@ const routes: Routes = [
   }, {
     path: "progress",
     component: ProgressComponent
+  }, {
+    path: "select",
+    component: SelectComponent
   }, {
     path: '**',
     canActivate: [StartComponent],

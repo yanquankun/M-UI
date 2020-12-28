@@ -1,0 +1,20 @@
+<div class="mui-select" #select
+  [ngClass]="{'mui-large-size':selectSize=='large','mui-default-size':selectSize=='default','mui-small-size':selectSize=='small'}">
+  <input type="text" class="mui-input" (blur)="blur()" [(ngModel)]="_selectName" disabled="true">
+  <i *ngIf="showIcon=='down'" class="iconfont ipt-arrow-down mui-select-icon">&#xe602;</i>
+  <div class="mui-select-content" *ngIf="showContent">
+    <ng-container *ngIf="!showLabelOpt">
+      <m-ui-select-item *ngFor="let option of _data" value="{{option.key}}" name="{{option.name}}"
+        checked="{{option.checked}}" (selectEmit)="selectEmit($event)">
+      </m-ui-select-item>
+    </ng-container>
+    <ng-container *ngIf="showLabelOpt">
+      <div class="mui-select-label" *ngFor="let option of _data">
+        {{option.label}}
+        <m-ui-select-item *ngFor="let child of option?.options" value="{{child.key}}" name="{{child.name}}"
+          checked="{{child.checked}}" (selectEmit)="selectEmit($event)">
+        </m-ui-select-item>
+      </div>
+    </ng-container>
+  </div>
+</div>

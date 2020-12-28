@@ -11,6 +11,7 @@ import { TagModule } from 'm-ui-lib/tag';
 import { MenuModule } from 'm-ui-lib/menu';
 import { DatePickerModule } from 'm-ui-lib/date-picker';
 import { ProgressModule } from 'm-ui-lib/progress';
+import { SelectModule } from 'm-ui-lib/select';
 // ------ mui模块引入区域 end ----------
 // ------ 指令引入区域 start ----------
 import { MuiShareModule } from 'm-ui-lib/mui-share';
@@ -26,6 +27,7 @@ import { TimePickerComponent } from './components/time-picker/time-picker.compon
 import { ApiComponent } from './components/api/api.component';
 import { DragZoomComponent } from './components/drag-zoom/drag-zoom.component';
 import { ProgressComponent } from './components/progress/progress.component';
+import { SelectComponent } from './components/select/select.component';
 // ------ 组件引入区域 end ----------
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { ProgressComponent } from './components/progress/progress.component';
     ApiComponent,
     DragZoomComponent,
     ProgressComponent,
+    SelectComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,7 @@ import { ProgressComponent } from './components/progress/progress.component';
     AppCodeModule,
     MuiShareModule,
     ProgressModule,
+    SelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
