@@ -111,8 +111,6 @@ export class SelectComponent implements OnInit {
     this._multiSelect.splice(idx, 1);
     this._multiSelectName.splice(this._multiSelectName.findIndex(v => v == e.name), 1);
     this._multiSelectValue.splice(this._multiSelectValue.findIndex(v => v == e.key), 1);
-    console.log(this._selectName)
-    console.log(this._selectValue)
     this.changeItemChecked(tag, true);
   }
 
