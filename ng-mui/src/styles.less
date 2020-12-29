@@ -32,10 +32,44 @@ body {
 }
 
 // 公共组件展示内容样式
-.common-sp{
+.common-sp {
   display: inline-block;
   margin: 10px;
 }
-.common-div{
+
+.common-div {
   margin: 10px 0;
+}
+
+// 尺码按钮共样式
+.common-btn {
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  background-image: none;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, .015);
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.645, .045, .355, 1);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+  height: 32px;
+  padding: 4px 15px;
+  font-size: 14px;
+  border-radius: 2px;
+  color: rgba(0, 0, 0, .85);
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  margin-right: 5px;
+
+  &:hover {
+    color: #40a9ff;
+    background: #fff;
+    border-color: #40a9ff;
+  }
 }

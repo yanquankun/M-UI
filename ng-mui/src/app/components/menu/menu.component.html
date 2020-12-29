@@ -11,7 +11,14 @@
 <label for="menu">import:</label>
 <app-code lang="javascript" ngNonBindable ngPreserveWhitespaces>
   import &#123;MenuModule&#125; from 'm-ui-lib/menu';
-
+</app-code>
+<label for="menu">source:</label>
+<app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
+  &lt;m-ui-menu [theme]="'dark'" [menuData]="menuData" (clickActiveNode)="clickActiveNode($event)"&gt;&lt;/m-ui-menu&gt;
+  &lt;m-ui-menu [theme]="'light'" [menuData]="menuData2"&gt;&lt;/m-ui-menu&gt;
+</app-code>
+<label for="menu">ts:</label>
+<app-code lang="javascript" ngNonBindable ngPreserveWhitespaces>
   [
   &#123;
   "name": "菜单一",
@@ -59,11 +66,6 @@
   "children": []
   &#125;
   ]
-</app-code>
-<label for="menu">source:</label>
-<app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
-  &lt;m-ui-menu [theme]="'dark'" [menuData]="menuData" (clickActiveNode)="clickActiveNode($event)"&gt;&lt;/m-ui-menu&gt;
-  &lt;m-ui-menu [theme]="'light'" [menuData]="menuData2"&gt;&lt;/m-ui-menu&gt;
 </app-code>
 <div>
   <app-api [ApiData]="ApiData"></app-api>

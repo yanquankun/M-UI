@@ -3,5 +3,5 @@
   <span class="mui-tag-content" #content>
     <ng-content selector=" mui-tag"></ng-content>
   </span>
-  <i class="mui-tag-close" (click)="close()" *ngIf="closeable">&#xe6ac;</i>
+  <i class="mui-tag-close" (click)="close($event)" *ngIf="closeable">&#xe6ac;</i>
 </span>

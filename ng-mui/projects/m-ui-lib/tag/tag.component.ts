@@ -75,7 +75,8 @@ export class TagComponent implements OnInit {
     return `hsl(${Math.floor(Math.random() * 361)}, 100%, 50%)`;
   }
 
-  close() {
+  close(event) {
+    event.stopPropagation();
     this.hideTag = true;
     const val = this.content.nativeElement.outerText;
     const output = {
