@@ -12,7 +12,14 @@ export class CalendarPickerComponent implements OnInit {
   // 日历选择星期一到星期日的显示方式  'Name' | 'FullName' | 'EnName' | 'FullEnName'
   @Input() weekShowType: 'Name' | 'FullName' | 'EnName' | 'FullEnName' = "Name";
   // 日历记录事件对象 数据类型为 caledarEvent
-  @Input() calendarEventArr: Array<caledarEvent> = null;
+  _calendarEventArr: Array<caledarEvent> = null;
+  @Input()
+  get calendarEventArr(): Array<caledarEvent> {
+    return this._calendarEventArr;
+  }
+  set calendarEventArr(val) {
+    this._calendarEventArr = val;
+  }
   // 日历信息保存事件
   @Output() calendarInfoEmit: EventEmitter<Object> = new EventEmitter<Object>();
 
@@ -139,7 +146,7 @@ export class CalendarPickerComponent implements OnInit {
         offset++;
         type = "cur";
       }
-      const curDayInfo = this.calendarEventArr.filter(v => v.id == id);
+      const curDayInfo = this._calendarEventArr.filter(v => v.id == id);
       !curDayInfo.length && this.curMonthData.push({
         id: id,
         name: id.split("-")[2],
