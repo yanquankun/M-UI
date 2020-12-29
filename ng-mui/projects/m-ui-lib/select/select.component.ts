@@ -66,6 +66,35 @@ export class SelectComponent implements OnInit {
     this.muiModelChange.emit({ key: e.key, name: e.name });
   }
 
+  // Clear all selections
+  clear(event) {
+    event.stopPropagation();
+    this._selectValue = null;
+    this._selectName = null;
+    if (this.showLabelOpt) {
+      for (let k = 0; k < this._data.length; k++) {
+        this._data[k]['options'] && this._data[k]['options'].length && this._data[k]['options'].forEach(v => {
+          v['checked'] = false;
+        });
+      }
+    } else {
+      this._data.forEach(v => {
+        v['checked'] = false;
+      });
+    }
+  }
+
+  // mouse enter 如果有选中值，变为清除按钮
+  selectMouseEnter() {
+    if (this._selectValue) {
+      this.showIcon = 'clear';
+    }
+  }
+
+  selectMouseLeave() {
+    this.showIcon = 'down';
+  }
+
   ngAfterViewInit() {
     this.select && this.select.nativeElement.addEventListener("click", () => {
       this.showContent = !this.showContent;

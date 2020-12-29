@@ -1,7 +1,8 @@
-<div class="mui-select" #select
+<div class="mui-select" #select (mouseenter)="selectMouseEnter()" (mouseleave)="selectMouseLeave()"
   [ngClass]="{'mui-large-size':selectSize=='large','mui-default-size':selectSize=='default','mui-small-size':selectSize=='small'}">
-  <input type="text" class="mui-input" (blur)="blur()" [(ngModel)]="_selectName" disabled="true">
+  <input type="text" class="mui-input" [(ngModel)]="_selectName" disabled="true">
   <i *ngIf="showIcon=='down'" class="iconfont ipt-arrow-down mui-select-icon">&#xe602;</i>
+  <i *ngIf="showIcon=='clear'" (click)="clear($event)" class="iconfont ipt-clear mui-select-icon">&#xe62a;</i>
   <div class="mui-select-content" *ngIf="showContent">
     <ng-container *ngIf="!showLabelOpt">
       <m-ui-select-item *ngFor="let option of _data" value="{{option.key}}" name="{{option.name}}"
