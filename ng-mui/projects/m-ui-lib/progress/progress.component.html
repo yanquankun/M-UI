@@ -1,0 +1,19 @@
+<div class="mui-progress">
+  <!-- 普通进度条 -->
+  <span *ngIf="!coloursProgress" class="mui-progress-bar"
+    [ngStyle]="{'height':progressHeight+'px','border-radius':progressHeight/2+'px'}">
+    <span class="mui-progress-bar-inside"
+      [ngStyle]="{'background':progressColor,'width':progress+'%','border-radius':progressHeight/2+'px'}"></span>
+  </span>
+  <!-- 彩色进度条 -->
+  <span *ngIf="coloursProgress" class="mui-progress-bar"
+    [ngStyle]="{'height':progressHeight+'px','border-radius':progressHeight/4+'px'}">
+    <span #colorBar class="mui-progress-bar-inside"
+      [ngStyle]="{'background':progressColor,'width':progress+'%','border-radius':progressHeight/4+'px'}"></span>
+  </span>
+  <ng-container *ngIf="showTail">
+    <div class="mui-progress-cdk">
+      <ng-content></ng-content>
+    </div>
+  </ng-container>
+</div>

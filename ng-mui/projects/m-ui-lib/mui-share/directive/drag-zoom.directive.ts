@@ -153,7 +153,8 @@ export class DragZoomDirective {
   }
 
   isParent(obj, parentObj) {
-    while (obj !== undefined && obj != null && obj.tagName.toUpperCase() !== 'BODY') {
+    while (obj !== undefined && obj != null && obj.tagName != "HTML" && obj.tagName.toUpperCase()
+      !== 'BODY') {
       if (obj === parentObj) {
         return true;
       }

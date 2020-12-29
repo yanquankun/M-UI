@@ -1,0 +1,27 @@
+<div class="mui-select" #select (mouseenter)="selectMouseEnter()" (mouseleave)="selectMouseLeave()"
+  [ngClass]="{'mui-large-size':selectSize=='large','mui-default-size':selectSize=='default','mui-small-size':selectSize=='small'}">
+  <input type="text" *ngIf="!multipleSelect" class="mui-input" [(ngModel)]="_selectName" disabled="true">
+  <span class="mui-select-multi"
+    [ngStyle]="{'line-height':selectSize=='small'?'24px':selectSize=='default'?'30px':'38px'}" *ngIf="multipleSelect">
+    <m-ui-tag *ngFor="let tag of _multiSelect" style="margin-right:2px" [closeable]="true"
+      (closeEvent)="closeEvent($event,tag)">{{tag?.name}}
+    </m-ui-tag>
+  </span>
+  <i *ngIf="showIcon=='down'" class="iconfont ipt-arrow-down mui-select-icon">&#xe602;</i>
+  <i *ngIf="showIcon=='clear'" (click)="clear($event)" class="iconfont ipt-clear mui-select-icon">&#xe62a;</i>
+  <div class="mui-select-content" *ngIf="showContent">
+    <ng-container *ngIf="!showLabelOpt">
+      <m-ui-select-item *ngFor="let option of _data" value="{{option.key}}" name="{{option.name}}"
+        checked="{{option.checked}}" (selectEmit)="selectEmit($event)">
+      </m-ui-select-item>
+    </ng-container>
+    <ng-container *ngIf="showLabelOpt">
+      <div class="mui-select-label" *ngFor="let option of _data">
+        {{option.label}}
+        <m-ui-select-item *ngFor="let child of option?.options" value="{{child.key}}" name="{{child.name}}"
+          checked="{{child.checked}}" (selectEmit)="selectEmit($event)">
+        </m-ui-select-item>
+      </div>
+    </ng-container>
+  </div>
+</div>

@@ -49,7 +49,17 @@ export class SilderComponent implements OnInit {
             "key": "_timepicker",
             "url": "/timepicker",
             "pid": "_exhibition",
-          },
+          }, {
+            "name": "progress 进度条",
+            "key": "_progress",
+            "url": "/progress",
+            "pid": "_exhibition",
+          },{
+            "name": "select 下拉选择框",
+            "key": "_select",
+            "url": "/select",
+            "pid": "_exhibition",
+          }
         ]
       }, {
         "name": "提示",

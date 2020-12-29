@@ -6,19 +6,25 @@ import { TagModule } from 'm-ui-lib/tag';
 import { MenuModule } from 'm-ui-lib/menu';
 import { DatePickerModule } from 'm-ui-lib/date-picker';
 import { MuiShareModule } from 'm-ui-lib/mui-share';
+import { ProgressModule } from 'm-ui-lib/progress';
+import { SelectModule } from 'm-ui-lib/select';
 export * from 'm-ui-lib/alert';
 export * from 'm-ui-lib/tag';
 export * from 'm-ui-lib/menu';
 export * from 'm-ui-lib/date-picker';
 export * from 'm-ui-lib/mui-share';
+export * from 'm-ui-lib/progress';
+export * from 'm-ui-lib/select';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     MuiShareModule,
+    ProgressModule,
+    SelectModule,
   ],
-  exports: [MuiAlertModule, TagModule, MenuModule, DatePickerModule],
+  exports: [MuiAlertModule, TagModule, MenuModule, DatePickerModule, ProgressModule, SelectModule],
   providers: [],
   declarations: []
 })

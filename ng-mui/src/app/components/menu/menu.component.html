@@ -17,6 +17,56 @@
   &lt;m-ui-menu [theme]="'dark'" [menuData]="menuData" (clickActiveNode)="clickActiveNode($event)"&gt;&lt;/m-ui-menu&gt;
   &lt;m-ui-menu [theme]="'light'" [menuData]="menuData2"&gt;&lt;/m-ui-menu&gt;
 </app-code>
+<label for="menu">ts:</label>
+<app-code lang="javascript" ngNonBindable ngPreserveWhitespaces>
+  [
+  &#123;
+  "name": "菜单一",
+  "key": "1",
+  "pid": null,
+  "children": [
+  &#123;
+  "name": "二级菜单一",
+  "key": "0-1",
+  "pid": "1",
+  "children": [
+  &#123;
+  "name": "三级菜单二",
+  "key": "0-1-1",
+  "pid": "0-1",
+  "children": []
+  &#125;
+  ]
+  &#125;,
+  &#123;
+  "name": "二级菜单二",
+  "key": "0-2",
+  "pid": "1",
+  "children": []
+  &#125;
+  ]
+  &#125;,
+  &#123;
+  "name": "菜单二",
+  "key": "2",
+  "pid": null,
+  "children": [
+  &#123;
+  "name": "二级菜单三",
+  "key": "2-1",
+  "pid": "2",
+  "children": []
+  &#125;
+  ]
+  &#125;,
+  &#123;
+  "name": "菜单三",
+  "key": "3",
+  "pid": null,
+  "children": []
+  &#125;
+  ]
+</app-code>
 <div>
   <app-api [ApiData]="ApiData"></app-api>
 </div>

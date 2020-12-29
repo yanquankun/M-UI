@@ -1,0 +1,90 @@
+<div>
+  <label for="select">尺寸：</label>
+  <button class="common-btn" (click)="this.size='large'">Large</button>
+  <button class="common-btn" (click)="this.size='default'">Default</button>
+  <button class="common-btn" (click)="this.size='small'">Small</button>
+  <div class="common-div">
+    <label for="select">当前尺寸：{{size}}</label>
+  </div>
+  <div class="common-div">
+    <label for="select">单选下拉列表：</label>
+    <m-ui-select [data]="data" [selectSize]="size" (muiModelChange)="muiModelChange($event)"></m-ui-select>
+  </div>
+  <div class="common-div">
+    <label for="select">特殊单选下拉列表：</label>
+    <m-ui-select [data]="data2" [selectSize]="size" (muiModelChange)="muiModelChange($event)"></m-ui-select>
+  </div>
+  <div class="common-div">
+    <label for="select">多选下拉列表：</label>
+    <m-ui-select [data]="data" [selectSize]="size" [multipleSelect]="true" (muiModelChange)="muiModelChange($event)">
+    </m-ui-select>
+  </div>
+  <div class="common-div">
+    <label for="select">特殊多选下拉列表：</label>
+    <m-ui-select [data]="data2" [selectSize]="size" [multipleSelect]="true" (muiModelChange)="muiModelChange($event)">
+    </m-ui-select>
+  </div>
+</div>
+<label for="select">import:</label>
+<app-code lang="javascript" ngNonBindable ngPreserveWhitespaces>
+  import &#123;selectModule&#125; from 'm-ui-lib/select';
+</app-code>
+<label for="select">source:</label>
+<app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
+  &lt;label for="select"&gt;单选下拉列表：&lt;/label&gt;
+  &lt;m-ui-select [data]="data" [selectSize]="size" (muiModelChange)="muiModelChange($event)"&gt;&lt;/m-ui-select&gt;
+  &lt;label for="select"&gt;特殊单选下拉列表：&lt;/label&gt;
+  &lt;m-ui-select [data]="data2" [selectSize]="size" (muiModelChange)="muiModelChange($event)"&gt;&lt;/m-ui-select&gt;
+  &lt;label for="select"&gt;多选下拉列表：&lt;/label&gt;
+  &lt;m-ui-select [data]="data" [selectSize]="size" [multipleSelect]="true"
+  (muiModelChange)="muiModelChange($event)"&gt;
+  &lt;/m-ui-select&gt;
+  &lt;label for="select"&gt;特殊多选下拉列表：&lt;/label&gt;
+  &lt;m-ui-select [data]="data2" [selectSize]="size" [multipleSelect]="true"
+  (muiModelChange)="muiModelChange($event)"&gt;
+  &lt;/m-ui-select&gt;
+</app-code>
+<label for="select">ts:</label>
+<app-code lang="javascript" ngNonBindable ngPreserveWhitespaces>
+  import &#123; selectItem &#125; from 'm-ui-lib/select';
+
+  data: Array &lt; selectItem &gt; =[ &#123;
+  key: 1,
+  name: "option1"
+  &#125;, &#123;
+  key: 2,
+  name: "option2"
+  &#125;, &#123;
+  key: 3,
+  name: "option3"
+  &#125;, &#123;
+  key: 4,
+  name: "option4"
+  &#125;, &#123;
+  key: 5,
+  name: "option5"
+  &#125;]
+  data2: Array &lt; &#123; label: string, options: Array&lt;selectItem&gt; &#125; &gt; =[ &#123;
+  label: '分类1',
+  options: [ &#123;
+  key: 1,
+  name: "option1"
+  &#125;, &#123;
+  key: 2,
+  name: "option2"
+  &#125;]
+  &#125;, &#123;
+  label: '分类2',
+  options: [ &#123;
+  key: 3,
+  name: "option3"
+  &#125;, &#123;
+  key: 4,
+  name: "option4"
+  &#125;]
+  &#125;]
+</app-code>
+<div>
+  <app-api [ApiData]="ApiData"></app-api>
+  <app-api [ApiData]="ItemApiData"></app-api>
+</div>
