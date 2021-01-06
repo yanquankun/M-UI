@@ -4,6 +4,10 @@
     <m-ui-calendar-picker [calendarEventArr]="calendarEventArr" [eventType]="'click'"
       (calendarInfoEmit)="calendarInfoEmit($event)"></m-ui-calendar-picker>
   </div>
+  <label for="calendar">时间控件：</label>
+  <div class="common-div">
+    <m-ui-date-picker></m-ui-date-picker>
+  </div>
   <label for="menu">import:</label>
   <app-code lang="javascript" ngNonBindable ngPreserveWhitespaces>
     import &#123;DatePickerModule&#125; from 'm-ui-lib/date-picker';

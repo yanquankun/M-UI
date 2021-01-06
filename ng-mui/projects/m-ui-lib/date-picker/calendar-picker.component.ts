@@ -162,8 +162,6 @@ export class CalendarPickerComponent implements OnInit {
         statu: curDayInfo[0].statu
       });
     }
-    console.log(this.calendarEventArr)
-    console.log(this.curMonthData)
   }
 
   initYearOptions() {

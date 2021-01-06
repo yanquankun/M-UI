@@ -1,3 +1,6 @@
-<p>
-  date-picker works!
-</p>
+<div class="mui-datepicker">
+  <div class="mui-datepicker-ipt" (click)="this.showDateContent=!this.showDateContent;">
+    <i class="mui-date-icon">&#xe648;</i>
+  </div>
+  <div class="mui-datepicker-content" *ngIf="showDateContent">123</div>
+</div>
