@@ -117,7 +117,7 @@ export class CalendarPickerComponent implements OnInit {
     const [preyear, nextyear, premonth, nextmonth] = [now.getMonth() ? now.getFullYear() : now.getFullYear() - 1,
     now.getMonth() == 11 ? now.getFullYear() + 1 : now.getFullYear(),
     now.getMonth() ? now.getMonth() : 12,
-    now.getMonth() == 11 ? 1 : now.getMonth() + 1];
+    now.getMonth() == 11 ? 1 : now.getMonth() + 2];
     const curMonth = now.getMonth() + 1;
     const curYear = now.getFullYear();
     let offset = 1;// 偏移起始值
