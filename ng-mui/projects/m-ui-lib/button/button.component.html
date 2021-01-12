@@ -1,0 +1,6 @@
+<button #muiBtn class="mui-button {{'mui-button-'+muiType}}"
+  [ngStyle]="{'height':muiSize==='large'?'40px':muiSize==='default'?'32px':'24px','lineHeight':muiSize==='small'?'0px':''}">
+  <ng-container *ngTemplateOutlet="prefix"></ng-container>
+  <ng-content></ng-content>
+  <ng-container *ngTemplateOutlet="suffix"></ng-container>
+</button>

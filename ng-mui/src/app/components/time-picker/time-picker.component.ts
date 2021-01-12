@@ -29,8 +29,7 @@ export class TimePickerComponent implements OnInit {
       type: "EventEmitter<Object>",
       default: ""
     }]
-  },];
-  ApiData2: Array<Object> = [{
+  }, {
     title: "[datepicker 日期选择]",
     api: [{
       name: "date",

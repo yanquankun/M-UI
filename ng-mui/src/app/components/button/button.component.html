@@ -1,0 +1,46 @@
+<div>
+  <label for="select">尺寸：</label>
+  <button class="common-btn" (click)="this.size='large'">Large</button>
+  <button class="common-btn" (click)="this.size='default'">Default</button>
+  <button class="common-btn" (click)="this.size='small'">Small</button>
+  <div class="common-div">
+    <label for="select">当前尺寸：{{size}}</label>
+  </div>
+  <span class="common-sp">
+    <m-ui-button muiType="default" [muiSize]="size">default</m-ui-button>
+  </span>
+  <span class="common-sp">
+    <m-ui-button muiType="danger" [muiSize]="size">danger</m-ui-button>
+  </span>
+  <span class="common-sp">
+    <m-ui-button muiType="primary" [muiSize]="size">primary</m-ui-button>
+  </span>
+  <span class="common-sp">
+    <m-ui-button muiType="dashed" [muiSize]="size">dashed</m-ui-button>
+  </span>
+  <span class="common-sp">
+    <m-ui-button disabled muiType="default" [muiSize]="size">disabled</m-ui-button>
+  </span>
+  <span class="common-sp">
+    <m-ui-button muiType="default" [muiSize]="size" [prefix]="prefix">prefix</m-ui-button>
+    <ng-template #prefix>
+      <span style="margin-right: 5px;"><i class="search">&#xe616;</i></span>
+    </ng-template>
+  </span>
+  <span class="common-sp">
+    <m-ui-button muiType="default" [muiSize]="size" [suffix]="suffix">suffix</m-ui-button>
+    <ng-template #suffix>
+      <span style="margin-left: 5px;"><i class="download">&#xe650;</i></span>
+    </ng-template>
+  </span>
+</div>
+<label for="button">import:</label>
+<app-code lang="javascript" ngNonBindable ngPreserveWhitespaces>
+  import &#123;ButtonModule&#125; from 'm-ui-lib/button';
+</app-code>
+<label for="button">source:</label>
+<app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
+</app-code>
+<div>
+  <app-api [ApiData]="ApiData"></app-api>
+</div>

@@ -8,6 +8,7 @@ import { DatePickerModule } from 'm-ui-lib/date-picker';
 import { MuiShareModule } from 'm-ui-lib/mui-share';
 import { ProgressModule } from 'm-ui-lib/progress';
 import { SelectModule } from 'm-ui-lib/select';
+import { ButtonModule } from 'm-ui-lib/button';
 export * from 'm-ui-lib/alert';
 export * from 'm-ui-lib/tag';
 export * from 'm-ui-lib/menu';
@@ -15,6 +16,7 @@ export * from 'm-ui-lib/date-picker';
 export * from 'm-ui-lib/mui-share';
 export * from 'm-ui-lib/progress';
 export * from 'm-ui-lib/select';
+export * from 'm-ui-lib/button';
 @NgModule({
   imports: [
     CommonModule,
@@ -24,14 +26,14 @@ export * from 'm-ui-lib/select';
     ProgressModule,
     SelectModule,
   ],
-  exports: [MuiAlertModule, TagModule, MenuModule, DatePickerModule, ProgressModule, SelectModule],
+  exports: [MuiAlertModule, TagModule, MenuModule, DatePickerModule, ProgressModule, SelectModule, ButtonModule],
   providers: [],
   declarations: []
 })
-export class MUiLibModule {
-  static forRoot(): ModuleWithProviders<MUiLibModule> {
+export class MuiLibModule {
+  static forRoot(): ModuleWithProviders<MuiLibModule> {
     return {
-      ngModule: MUiLibModule,
+      ngModule: MuiLibModule,
     };
   }
 }

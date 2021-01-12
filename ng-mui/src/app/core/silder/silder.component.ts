@@ -35,6 +35,18 @@ export class SilderComponent implements OnInit {
           },
         ]
       }, {
+        "name": "通用",
+        "key": "_general",
+        "pid": null,
+        "children": [
+          {
+            "name": "button 按钮",
+            "key": "_button",
+            "url": "/button",
+            "pid": "_general",
+          },
+        ]
+      }, {
         "name": "展示",
         "key": "_exhibition",
         "pid": null,
@@ -54,7 +66,7 @@ export class SilderComponent implements OnInit {
             "key": "_progress",
             "url": "/progress",
             "pid": "_exhibition",
-          },{
+          }, {
             "name": "select 下拉选择框",
             "key": "_select",
             "url": "/select",

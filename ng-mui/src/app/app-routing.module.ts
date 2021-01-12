@@ -8,6 +8,7 @@ import { TimePickerComponent } from './components/time-picker/time-picker.compon
 import { DragZoomComponent } from './components/drag-zoom/drag-zoom.component';
 import { ProgressComponent } from './components/progress/progress.component';
 import { SelectComponent } from './components/select/select.component';
+import { ButtonComponent } from './components/button/button.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,9 @@ const routes: Routes = [
   }, {
     path: "select",
     component: SelectComponent
+  }, {
+    path: "button",
+    component: ButtonComponent
   }, {
     path: '**',
     canActivate: [StartComponent],
