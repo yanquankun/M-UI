@@ -31,7 +31,6 @@ export class ButtonComponent implements OnInit {
       this.setDisabled(this.muiBtn);
       parent.style.pointerEvents = 'none';
     }
-    console.log(this.prefix)
   }
 
 }

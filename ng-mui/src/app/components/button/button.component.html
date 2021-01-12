@@ -38,8 +38,65 @@
 <app-code lang="javascript" ngNonBindable ngPreserveWhitespaces>
   import &#123;ButtonModule&#125; from 'm-ui-lib/button';
 </app-code>
+<label for="button">less:</label>
+<app-code lang="css" ngNonBindable ngPreserveWhitespaces>
+  @font-face &#123;
+  font-family: 'mui-icon-search';
+  src: url('//at.alicdn.com/t/font_2262438_ggjpj3ufed7.eot');
+  src: url('//at.alicdn.com/t/font_2262438_ggjpj3ufed7.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_2262438_ggjpj3ufed7.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_2262438_ggjpj3ufed7.woff') format('woff'),
+  url('//at.alicdn.com/t/font_2262438_ggjpj3ufed7.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_2262438_ggjpj3ufed7.svg#iconfont') format('svg');
+  &#125;
+
+  @font-face &#123;
+  font-family: 'mui-icon-download';
+  src: url('//at.alicdn.com/t/font_2262438_9o4njxd4hyk.eot');
+  src: url('//at.alicdn.com/t/font_2262438_9o4njxd4hyk.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_2262438_9o4njxd4hyk.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_2262438_9o4njxd4hyk.woff') format('woff'),
+  url('//at.alicdn.com/t/font_2262438_9o4njxd4hyk.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_2262438_9o4njxd4hyk.svg#iconfont') format('svg');
+  &#125;
+
+  .search &#123;
+  font-style: normal;
+  font-family: "mui-icon-search";
+  font-size: 16px;
+  font-weight: 900;
+  &#125;
+
+  .download &#123;
+  font-style: normal;
+  font-family: "mui-icon-download";
+  font-size: 16px;
+  font-weight: 900;
+  &#125;
+
+</app-code>
 <label for="button">source:</label>
 <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
+  &lt;m-ui-button muiType="default" [muiSize]="size"&gt;default&lt;/m-ui-button&gt;
+
+  &lt;m-ui-button muiType="danger" [muiSize]="size"&gt;danger&lt;/m-ui-button&gt;
+
+  &lt;m-ui-button muiType="primary" [muiSize]="size"&gt;primary&lt;/m-ui-button&gt;
+
+  &lt;m-ui-button muiType="dashed" [muiSize]="size"&gt;dashed&lt;/m-ui-button&gt;
+
+
+  &lt;m-ui-button disabled muiType="default" [muiSize]="size"&gt;disabled&lt;/m-ui-button&gt;
+
+  &lt;m-ui-button muiType="default" [muiSize]="size" [prefix]="prefix"&gt;prefix&lt;/m-ui-button&gt;
+  &lt;ng-template #prefix&gt;
+  &lt;span style="margin-right: 5px;"&gt;&lt;i class="search"&gt;&#38;#xe616;&lt;/i&gt;&lt;/span&gt;
+  &lt;/ng-template&gt;
+
+  &lt;m-ui-button muiType="default" [muiSize]="size" [suffix]="suffix"&gt;suffix&lt;/m-ui-button&gt;
+  &lt;ng-template #suffix&gt;
+  &lt;span style="margin-left: 5px;"&gt;&lt;i class="download"&gt;&#38;#xe650;&lt;/i&gt;&lt;/span&gt;
+  &lt;/ng-template&gt;
 </app-code>
 <div>
   <app-api [ApiData]="ApiData"></app-api>
