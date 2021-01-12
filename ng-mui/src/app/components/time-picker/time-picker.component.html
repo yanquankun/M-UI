@@ -6,7 +6,7 @@
   </div>
   <label for="calendar">时间控件：</label>
   <div class="common-div">
-    <m-ui-date-picker></m-ui-date-picker>
+    <m-ui-date-picker [date]="'2020-1-1'" (dateChange)="dateChange($event)"></m-ui-date-picker>
   </div>
   <label for="menu">import:</label>
   <app-code lang="javascript" ngNonBindable ngPreserveWhitespaces>
@@ -14,12 +14,15 @@
   </app-code>
   <label for="calendar">source:</label>
   <app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
+    日历控件：
     &lt;m-ui-calendar-picker [calendarEventArr]="calendarEventArr" [eventType]="'click'"
     (calendarInfoEmit)="calendarInfoEmit($event)"&gt;&lt;/m-ui-calendar-picker&gt;
+    时间控件：
+    &lt;m-ui-date-picker [date]="'2020-1-1'" (dateChange)="dateChange($event)"&gt;&lt;/m-ui-date-picker&gt;
   </app-code>
   <app-code lang="javascript" ngNonBindable ngPreserveWhitespaces>
     import &#123; caledarEvent, infoStatu &#125; from 'm-ui-lib/date-picker/calendar';
-
+    日历控件：
     calendarEventArr: Array&lt;caledarEvent&gt; = [&#123;
     "id": "2020-11-21",
     "info": "哈哈",
@@ -33,8 +36,17 @@
     "info": "明天是个好日子",
     "statu": infoStatu.NEW
     &#125;];
+
+    calendarInfoEmit(e) &#123;
+      console.log(e);
+    &#125;
+
+    dateChange(e) &#123;
+     console.log(e);
+    &#125;
   </app-code>
 </div>
 <div>
   <app-api [ApiData]="ApiData"></app-api>
+  <app-api [ApiData]="ApiData2"></app-api>
 </div>

@@ -30,6 +30,25 @@ export class TimePickerComponent implements OnInit {
       default: ""
     }]
   },];
+  ApiData2: Array<Object> = [{
+    title: "[datepicker 日期选择]",
+    api: [{
+      name: "date",
+      describe: "默认日期",
+      type: "yyyy-m-d | yyyy-mm-dd",
+      default: "null"
+    }, {
+      name: "weekShowType",
+      describe: "日历选择星期一到星期日的显示方式",
+      type: "'Name' | 'FullName' | 'EnName' | 'FullEnName' ",
+      default: "Name"
+    }, {
+      name: "dateChange",
+      describe: "日期选择事件",
+      type: "EventEmitter<{ date: string }>",
+      default: "-"
+    }]
+  },];
   calendarEventArr: Array<caledarEvent> = [{
     "id": "2020-11-21",
     "info": "哈哈",
@@ -47,6 +66,10 @@ export class TimePickerComponent implements OnInit {
   constructor() { }
 
   calendarInfoEmit(e) {
+    console.log(e);
+  }
+
+  dateChange(e) {
     console.log(e);
   }
 

@@ -1,6 +1,31 @@
 <div class="mui-datepicker">
-  <div class="mui-datepicker-ipt" (click)="this.showDateContent=!this.showDateContent;">
+  <div class="mui-datepicker-ipt" (click)="showContent()">
+    <span class="mui-datepicker-ipt-select">{{selectedDate}}</span>
     <i class="mui-date-icon">&#xe648;</i>
   </div>
-  <div class="mui-datepicker-content" *ngIf="showDateContent">123</div>
+  <div class="mui-datepicker-content" *ngIf="showDateContent">
+    <div class="mui-datepicker-content-header">
+      <span title="上一年" style="position: absolute;left: 7px;" class="mui-left-db-arrow"
+        (click)="arrowChange('dbleft')"></span>
+      <span title="上个月" style="position: absolute;left: 29px;" class="mui-left-arrow"
+        (click)="arrowChange('left')"></span>
+      <span class="last-month">{{headerdate}}</span>
+      <span title="下个月" style="position: absolute;right: 29px;" class="mui-right-arrow"
+        (click)="arrowChange('right')"></span>
+      <span title="下一年" style="position: absolute;right: 7px;" class="mui-right-db-arrow"
+        (click)="arrowChange('dbright')"></span>
+    </div>
+    <div class="mui-datepicker-content-body">
+      <span class="mui-datepicker-content-body-week" *ngFor="let weekshow of _weekShow;let k = index"
+        [ngStyle]="{'color':k==5||k==6?'#e02d2d':''}">
+        {{weekshow[weekShowType]}}
+      </span>
+      <span [ngClass]="{'calendar-active':day.isNow}" class="mui-datepicker-content-body-day"
+        *ngFor="let day of curMonthData" [ngStyle]="{'color':day.type!='cur'?'#bfbfbf':''}"
+        (click)="selectDate(day)">{{day?.name}}</span>
+    </div>
+    <div class="mui-datepicker-content-foot">
+      <span class="mui-datepicker-content-foot-today" (click)="goToday()">今天</span>
+    </div>
+  </div>
 </div>

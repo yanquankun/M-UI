@@ -1,13 +1,15 @@
 @import './../styles/core/_layout.less';
 @import './../styles/core/_color.less';
+@import './../styles/core/_common.less';
 
 .mui-datepicker {
   display: inline-block;
+  width: 220px;
+  position: relative;
 
   &-ipt {
     display: inline-block;
-    width: auto;
-    min-width: 200px;
+    width: 100%;
     padding: 0 11px;
     border: 1px solid #d9d9d9;
     border-radius: 2px;
@@ -20,7 +22,59 @@
     line-height: 24px;
   }
 
-  &-content {}
+  &-content {
+    border: 1px solid #d9d9d9;
+    border-top: none;
+    height: auto;
+    width: calc(100% + 22px);
+    margin-top: -1px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 999;
+
+
+    &-header {
+      height: 25px;
+      line-height: 25px;
+      width: 100%;
+      border-bottom: 1px solid #e8e8e8;
+      text-align: center;
+      position: relative;
+    }
+
+    &-body {
+      padding: 0 11px;
+
+      &-week,
+      &-day {
+        line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+        padding: 1px;
+        border: 1px solid transparent;
+        width: calc((100% - 28px) / 7) !important;
+        display: inline-block;
+      }
+
+      &-day:hover {
+        background: #e6f7ff;
+      }
+    }
+
+    &-foot {
+      height: 25px;
+      line-height: 25px;
+      width: 100%;
+      border-top: 1px solid #e8e8e8;
+      text-align: center;
+
+      &-today {
+        color: #40a9ff;
+        cursor: pointer;
+      }
+    }
+
+  }
 
 }
 
@@ -28,4 +82,11 @@
   color: @mui-primary-color;
   position: absolute;
   right: 11px;
+}
+
+.calendar-active {
+  background: #d1e9ff;
+  color: #1890ff;
+  font-weight: 700;
+  border-color: #1890ff;
 }

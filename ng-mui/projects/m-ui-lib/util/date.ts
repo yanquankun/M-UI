@@ -91,10 +91,14 @@ export class dateFormat extends until {
             return super.add0(h) + ":" + super.add0(mm) + ":" + super.add0(s);
         } else if (type == "MonthDay") {
             return super.add0(m) + "月" + super.add0(d) + "日";
-        } else if (type == "YearMonthDay") {
+        } else if (type == "YearMonth") {
+            return super.add0(y) + "年" + super.add0(m) + "月";
+        } else if (type == "YearMonthDayCh") {
             return y + "年" + super.add0(m) + "月" + super.add0(d) + "日";
         } else if (type == "YearMonthDay") {
             return y + "-" + super.add0(m) + "-" + super.add0(d);
+        } else if (type == "YearMonthDayNoZero") {
+            return y + "-" + m + "-" + d;
         } else if (type == "monthDayTime") {
             return super.add0(m) + "-" + super.add0(d) + " " + super.add0(h) + ":" + super.add0(mm);
         }
