@@ -1,0 +1,87 @@
+<div>
+  <label for="input">尺寸：</label>
+  <button class="common-btn" (click)="this.size='large'">Large</button>
+  <button class="common-btn" (click)="this.size='default'">Default</button>
+  <button class="common-btn" (click)="this.size='small'">Small</button>
+  <div class="common-div">
+    <label for="input">当前尺寸：{{size}}</label>
+  </div>
+  <div class="common-div">
+    <label for="input">普通：</label>
+    <input mUiInput [(ngModel)]="value" placeholder="please input..." [size]="size" [disabled]="false">
+  </div>
+  <div class="common-div">
+    <label for="input">禁用：</label>
+    <input mUiInput placeholder="disabled" [size]="size" [disabled]="true">
+  </div>
+  <div class="common-div">
+    <label for="input">加前缀：</label>
+    <m-ui-input-tpl [prefix]="prefix">
+      <input mUiInput placeholder="prefix" [size]="size">
+      <ng-template #prefix>
+        <i class="search">&#xe616;</i>
+      </ng-template>
+    </m-ui-input-tpl>
+  </div>
+  <div class="common-div">
+    <label for="input">加后缀：</label>
+    <m-ui-input-tpl [suffix]="suffix">
+      <input mUiInput placeholder="suffix" [size]="size">
+      <ng-template #suffix>
+        <i class="download">&#xe650;</i>
+      </ng-template>
+    </m-ui-input-tpl>
+  </div>
+  <div class="common-div">
+    <label for="input">加缀：</label>
+    <m-ui-input-tpl [suffix]="suffix" [prefix]="prefix">
+      <input mUiInput placeholder="suffix" [size]="size">
+      <ng-template #prefix>
+        <i class="search">&#xe616;</i>
+      </ng-template>
+      <ng-template #suffix>
+        <i class="download">&#xe650;</i>
+      </ng-template>
+    </m-ui-input-tpl>
+  </div>
+</div>
+<label for="input">import:</label>
+<app-code lang="javascript" ngNonBindable ngPreserveWhitespaces>
+  import &#123;InputModule&#125; from 'm-ui-lib/input';
+</app-code>
+<label for="input">source:</label>
+<app-code lang="markup" ngNonBindable ngPreserveWhitespaces>
+  &lt;input mUiInput [(ngModel)]="value" placeholder="please input..." [size]="size" [disabled]="false"&gt;
+  
+  &lt;input mUiInput placeholder="disabled
+  
+  &lt;m-ui-input-tpl [prefix]=" prefix"&gt;
+  &lt;input mUiInput placeholder="prefix" [size]="size"&gt;
+  &lt;ng-template #prefix&gt;
+  &lt;i class="search"&gt;&#38;#xe616;&lt;/i&gt;
+  &lt;/ng-template&gt;
+  &lt;/m-ui-input-tpl&gt;
+
+  &lt;m-ui-input-tpl [suffix]="suffix"&gt;
+  &lt;input mUiInput placeholder="suffix" [size]="size"&gt;
+  &lt;ng-template #suffix&gt;
+  &lt;i class="download"&gt;&#38;#xe650;&lt;/i&gt;
+  &lt;/ng-template&gt;
+  &lt;/m-ui-input-tpl&gt;
+  
+  &lt;m-ui-input-tpl [suffix]="suffix" [prefix]="prefix"&gt;
+  &lt;input mUiInput placeholder="suffix" [size]="size"&gt;
+  &lt;ng-template #prefix&gt;
+  &lt;i class="search"&gt;&#38;#xe616;&lt;/i&gt;
+  &lt;/ng-template&gt;
+  &lt;ng-template #suffix&gt;
+  &lt;i class="download"&gt;&#38;#xe650;&lt;/i&gt;
+  &lt;/ng-template&gt;
+  &lt;/m-ui-input-tpl&gt;
+</app-code>
+<app-code lang="javascript" ngNonBindable ngPreserveWhitespaces>
+  value = "我是默认值";
+</app-code>
+<div>
+  <app-api [ApiData]="ApiData"></app-api>
+</div>

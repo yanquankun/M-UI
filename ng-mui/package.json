@@ -1,10 +1,10 @@
 {
   "name": "ng-mui",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4000",
-    "build": "ng build --prod --deploy-url components/",
+    "build": "ng build --prod --base-href /ng-mui/0.1/",
     "build:mui": "node --max_old_space_size=8192 ./node_modules/@angular/cli/bin/ng build m-ui-lib",
     "css-compile": "lessc ./projects/m-ui-lib/styles/compile/output.less ./m-ui/compile/output.css",
     "less-compile": "lessc ./projects/m-ui-lib/styles/compile/output.less ./m-ui/compile/output.less",
@@ -15,7 +15,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~7.2.0",
     "@angular/common": "~7.2.0",

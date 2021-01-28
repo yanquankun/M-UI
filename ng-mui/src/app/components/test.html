@@ -1,0 +1,23 @@
+&lt;input mUiInput [(ngModel)]="value" placeholder="please input..." [size]="size" [disabled]="false"&gt;
+&lt;input mUiInput placeholder="disabled
+&lt;m-ui-input-tpl [prefix]=" prefix"&gt;
+&lt;input mUiInput placeholder="prefix" [size]="size"&gt;
+&lt;ng-template #prefix&gt;
+&lt;i class="search"&gt;&#38;#xe616;&lt;/i&gt;
+&lt;/ng-template&gt;
+&lt;/m-ui-input-tpl&gt;
+&lt;m-ui-input-tpl [suffix]="suffix"&gt;
+&lt;input mUiInput placeholder="suffix" [size]="size"&gt;
+&lt;ng-template #suffix&gt;
+&lt;i class="download"&gt;&#38;#xe650;&lt;/i&gt;
+&lt;/ng-template&gt;
+&lt;/m-ui-input-tpl&gt;
+&lt;m-ui-input-tpl [suffix]="suffix" [prefix]="prefix"&gt;
+&lt;input mUiInput placeholder="suffix" [size]="size"&gt;
+&lt;ng-template #prefix&gt;
+&lt;i class="search"&gt;&#38;#xe616;&lt;/i&gt;
+&lt;/ng-template&gt;
+&lt;ng-template #suffix&gt;
+&lt;i class="download"&gt;&#38;#xe650;&lt;/i&gt;
+&lt;/ng-template&gt;
+&lt;/m-ui-input-tpl&gt;

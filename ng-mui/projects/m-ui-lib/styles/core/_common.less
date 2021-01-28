@@ -1,3 +1,5 @@
+@import './_color.less';
+
 /* icon 图标公共样式 */
 .iconfont {
   font-size: 20px;
@@ -106,4 +108,94 @@
 
 .row7 {
   height: calc(100% / 7) !important;
+}
+
+[mUiInput] {
+  width: 220px;
+  height: 28px;
+  box-sizing: border-box;
+  padding: 4px 10px;
+  color: #252b3a;
+  vertical-align: middle;
+  border: 1px solid #adb0b8;
+  border-radius: 2px;
+  outline: none;
+  background-color: #fff;
+
+  &:not([disabled]):not(.disabled):not(.mui-disabled):not(.error):not(.mui-error) {
+    &:hover {
+      border-color: #575d6c;
+    }
+
+    &:focus {
+      border-color: #5e7ce0;
+    }
+  }
+
+  &[disabled],
+  &.disabled,
+  &.mui-disabled {
+
+    &,
+    &:hover {
+      cursor: not-allowed;
+      background-color: @mui-disabled-bg;
+      border-color: @mui-disabled-line;
+      color: @mui-disabled-text;
+    }
+  }
+}
+
+// 前缀 css
+.mui-prefix {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  color: rgba(0, 0, 0, .65);
+  line-height: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 12px;
+}
+
+// 后缀 css
+.mui-suffix {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  color: rgba(0, 0, 0, .65);
+  line-height: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 12px;
+}
+
+// ipt 加缀公共样式
+.mui-ipt-affixation {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  line-height: 1;
+}
+
+// ipt 有前缀的input
+.mui-ipt-prefix {
+  input.mui-ipt {
+    padding-left: 35px;
+  }
+}
+
+// ipt 有后缀的input
+.mui-ipt-suffix {
+  input.mui-ipt {
+    padding-right: 35px;
+  }
+}
+
+// ipt 有前后缀的input
+.mui-ipt-affix {
+  input.mui-ipt {
+    padding: 0 35px;
+  }
 }

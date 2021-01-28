@@ -9,6 +9,7 @@ import { MuiShareModule } from 'm-ui-lib/mui-share';
 import { ProgressModule } from 'm-ui-lib/progress';
 import { SelectModule } from 'm-ui-lib/select';
 import { ButtonModule } from 'm-ui-lib/button';
+import { InputModule } from 'm-ui-lib/input';
 export * from 'm-ui-lib/alert';
 export * from 'm-ui-lib/tag';
 export * from 'm-ui-lib/menu';
@@ -17,6 +18,7 @@ export * from 'm-ui-lib/mui-share';
 export * from 'm-ui-lib/progress';
 export * from 'm-ui-lib/select';
 export * from 'm-ui-lib/button';
+export * from 'm-ui-lib/input';
 @NgModule({
   imports: [
     CommonModule,
@@ -26,7 +28,7 @@ export * from 'm-ui-lib/button';
     ProgressModule,
     SelectModule,
   ],
-  exports: [MuiAlertModule, TagModule, MenuModule, DatePickerModule, ProgressModule, SelectModule, ButtonModule],
+  exports: [MuiAlertModule, TagModule, MenuModule, DatePickerModule, ProgressModule, SelectModule, ButtonModule, InputModule],
   providers: [],
   declarations: []
 })

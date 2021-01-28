@@ -1,0 +1,7 @@
+<span *ngIf="_prefix" class="mui-prefix">
+  <ng-container *ngTemplateOutlet="_prefix">{{_prefix}}</ng-container>
+</span>
+<ng-content></ng-content>
+<span *ngIf="_suffix" class="mui-suffix">
+  <ng-container *ngTemplateOutlet="_suffix"></ng-container>
+</span>

@@ -23,6 +23,7 @@ export class ButtonComponent implements OnInit {
     dom.nativeElement.style.color = 'rgba(0,0,0,.25)';
     dom.nativeElement.style.backgroundColor = '#f5f5f5';
     dom.nativeElement.style.borderColor = '#d9d9d9';
+    dom.nativeElement.style.cursor = "not-allowed";
   }
 
   ngOnInit() {

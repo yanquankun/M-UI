@@ -9,6 +9,7 @@ import { DragZoomComponent } from './components/drag-zoom/drag-zoom.component';
 import { ProgressComponent } from './components/progress/progress.component';
 import { SelectComponent } from './components/select/select.component';
 import { ButtonComponent } from './components/button/button.component';
+import { InputComponent } from './components/input/input.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,9 @@ const routes: Routes = [
   }, {
     path: "button",
     component: ButtonComponent
+  }, {
+    path: "input",
+    component: InputComponent
   }, {
     path: '**',
     canActivate: [StartComponent],

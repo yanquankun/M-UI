@@ -44,6 +44,11 @@ export class SilderComponent implements OnInit {
             "key": "_button",
             "url": "/button",
             "pid": "_general",
+          }, {
+            "name": "input 输入框",
+            "key": "_input",
+            "url": "/input",
+            "pid": "_general",
           },
         ]
       }, {

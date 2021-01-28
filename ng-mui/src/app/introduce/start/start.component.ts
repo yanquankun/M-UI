@@ -21,6 +21,10 @@ export class StartComponent implements OnInit {
     window.open('https://github.com/yanquankun');
   }
 
+  toNpm() {
+    window.open('https://www.npmjs.com/package/m-ui-lib');
+  }
+
   ngOnInit() {
   }
 
