@@ -10,7 +10,7 @@ import { ProgressComponent } from './components/progress/progress.component';
 import { SelectComponent } from './components/select/select.component';
 import { ButtonComponent } from './components/button/button.component';
 import { InputComponent } from './components/input/input.component';
-
+import { VERSION } from './version';
 const routes: Routes = [
   {
     path: '',
@@ -49,7 +49,7 @@ const routes: Routes = [
   }, {
     path: '**',
     canActivate: [StartComponent],
-    redirectTo: 'start',
+    redirectTo: "start",
   }
 ];
 

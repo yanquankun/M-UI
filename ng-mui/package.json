@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4000",
-    "build": "ng build --prod --base-href /ng-mui/0.1/",
+    "build": "ng build --prod --base-href /ng-mui/",
     "build:mui": "node --max_old_space_size=8192 ./node_modules/@angular/cli/bin/ng build m-ui-lib",
     "css-compile": "lessc ./projects/m-ui-lib/styles/compile/output.less ./m-ui/compile/output.css",
     "less-compile": "lessc ./projects/m-ui-lib/styles/compile/output.less ./m-ui/compile/output.less",

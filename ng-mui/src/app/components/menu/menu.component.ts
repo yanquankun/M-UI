@@ -37,7 +37,7 @@ export class MenuComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.request("get", "./../../../assets/mock/menu.json").subscribe(res => {
+    this.http.request("get", "./assets/mock/menu.json").subscribe(res => {
       this.menuData = [].concat(res);
     })
     this.menuData2 = [
