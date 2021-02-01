@@ -10,7 +10,7 @@ author:闫全堃(Mint)
 ui framework version:1.0.0  
 tip: 此UI框架为本人最初版本,并未投入使用,持续迭代开发中,将发布更多的定制组件,敬请期待~  
 官网地址：http://39.97.119.181/ng-mui/#/start 或 http://39.97.119.181:9090/ng-mui/#/start  
-npm下载方式：npm install m-ui-lib
+npm下载方式：npm install m-ui-lib 或 npm install m-ui-lib@[version]
 
 ## Further help
 
