@@ -1,7 +1,8 @@
 import { Directive, ElementRef, HostListener, Input, Output, EventEmitter } from '@angular/core';
 
 @Directive({
-  selector: '[mUiDragZoom]'
+  selector: '[mUiDragZoom]',
+  exportAs: 'mUiDragZoom',
 })
 export class DragZoomDirective {
   @Input() highlightColor: string;

@@ -20,15 +20,18 @@ export * from 'm-ui-lib/select';
 export * from 'm-ui-lib/button';
 export * from 'm-ui-lib/input';
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
+  imports: [],
+  exports: [
+    MuiAlertModule,
+    TagModule,
+    MenuModule,
+    DatePickerModule,
     MuiShareModule,
     ProgressModule,
     SelectModule,
+    ButtonModule,
+    InputModule,
   ],
-  exports: [MuiAlertModule, TagModule, MenuModule, DatePickerModule, ProgressModule, SelectModule, ButtonModule, InputModule],
   providers: [],
   declarations: []
 })

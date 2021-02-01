@@ -16,10 +16,31 @@
   <div class="start-div">
     npm地址：<a (click)="toNpm()" style="color: #000;cursor: pointer;">https://www.npmjs.com/package/m-ui-lib</a>
   </div>
+  <div class="notice">注意：需引入全局样式</div>
+  <div class="start-div">
+    全局less引入：在 angular.json 文件中引入mui样式:
+    <app-code lang="javascript" ngNonBindable ngPreserveWhitespaces>
+      &#123; "styles":
+      [
+      "node_modules/m-ui-lib/mui.less"
+      ]
+      &#125;
+    </app-code>
+  </div>
+  <div class="start-div">
+    "或全局css引入：在 angular.json 文件中引入mui样式:
+    <app-code lang="javascript" ngNonBindable ngPreserveWhitespaces>
+      &#123; "styles":
+      [
+      "node_modules/m-ui-lib/mui.css"
+      ]
+      &#125;
+    </app-code>
+  </div>
   <div class="start-div">
     公用样式文件（如：tag控件烟花特效样式）：
     <span class="common-sp">
-      <a target="_blank" href="http://39.97.119.181/ng-mui-style/1.0.0/compile/output.css">output.css</a>
+      <a target="_blank" href="http://39.97.119.181/ng-mui-style/1.1.0/compile/output.css">output.css</a>
     </span>
     <span class="common-sp">
       <a target="_blank" href="http://39.97.119.181/ng-mui-style/1.0.0/compile/output.less">output.less</a>

@@ -10,12 +10,14 @@
     "less-compile": "lessc ./projects/m-ui-lib/styles/compile/output.less ./m-ui/compile/output.less",
     "css-minify": "cleancss --format breakWith=lf --output ./m-ui/compile/output.min.css ./m-ui/compile/output.css",
     "less-minify": "cleancss --format breakWith=lf --output ./m-ui/compile/output.min.less ./m-ui/compile/output.less",
-    "postbuild:mui": "npm run css-compile && npm run css-minify && npm run less-compile && npm run less-minify ",
+    "css-mui": "lessc ./projects/m-ui-lib/styles/mui.less ./m-ui/mui.css",
+    "less-mui": "lessc ./projects/m-ui-lib/styles/mui.less ./m-ui/mui.less",
+    "postbuild:mui": "npm run css-compile && npm run css-minify && npm run less-compile && npm run less-minify && npm run css-mui && npm run less-mui",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private":true,
+  "private": true,
   "dependencies": {
     "@angular/animations": "~7.2.0",
     "@angular/common": "~7.2.0",
